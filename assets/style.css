@@ -62,3 +62,9 @@ div.material {
   font-size: 15px;
   font-weight: 400;
 }
+div.company {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
