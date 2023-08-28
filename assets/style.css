@@ -1,3 +1,8 @@
+body {
+  background: #ffffff;
+  color: #000000;
+}
+
 body,
 td,
 th,
@@ -44,8 +49,9 @@ div.title {
   margin-bottom: 5px;
 }
 div.author {
-  font-size: 15px;
   color: #777777;
+  font-size: 15px;
+  font-weight: 400;
   margin-bottom: 5px;
 }
 div.author a:link,
@@ -62,9 +68,27 @@ div.material {
   font-size: 15px;
   font-weight: 400;
 }
-div.company {
+div.award {
+  color: #FF0000;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+div.institution {
   color: #000000;
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
+}
+div.period {
+  color: #777777;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+div.position {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 400;
 }
