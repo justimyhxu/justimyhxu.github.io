@@ -727,8 +727,8 @@ render_project(
         'Han Hu'
     ],
     material_list=[
-        ['CVPR 2020', 'https://arxiv.org/pdf/2004.03548.pdf'],
-        ['Project', 'https://decisionforce.github.io/TPN/'],
+        ['ECCV 2020', 'https://arxiv.org/pdf/1912.11473.pdf'],
+        ['Code', 'https://github.com/justimyhxu/Dense-RepPoints'],
     ],
     award_name=null,
 );
