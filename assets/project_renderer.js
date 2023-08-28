@@ -824,7 +824,7 @@ render_author('Sheng Guo', 'https://scholar.google.com/citations?user=mbpgOmEAAA
 render_author('Sida Peng', 'https://pengsida.net/');
 render_author('Stephen Lin', 'https://scholar.google.com/citations?user=c3PYmxUAAAAJ');
 render_author('Weihao Xia', 'https://scholar.google.com/citations?user=Egqp5AMAAAAJ');
-render_author('Wang yifan', 'https://yifita.netlify.app/');
+render_author('Wang Yifan', 'https://yifita.netlify.app/');
 render_author('Wayne Wu');
 render_author('Xian Liu', 'https://alvinliu0.github.io/');
 render_author('Xiao Sun', 'https://jimmysuen.github.io/');
