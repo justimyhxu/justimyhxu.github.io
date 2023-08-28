@@ -715,7 +715,7 @@ render_project(
 
 render_project(
     project_name='DenseReppoints',
-    figure_path='./assets/projects/DenseRepPoints.png',
+    figure_path='./assets/projects/densereppoints.png',
     title_name='Dense RepPoints: Representing Visual Objects with Dense Point Sets',
     author_list=[
         'Yinghao Xu', 'equal',
