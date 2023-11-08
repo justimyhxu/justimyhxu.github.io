@@ -152,6 +152,44 @@ render_project(
 
 // Projects.
 render_project(
+    project_name='Aurora',
+    figure_path='./assets/projects/aurora.jpg',
+    title_name='Exploring Sparse MoE in GANs for Text-conditioned Image Synthesis',
+    author_list=[
+        'Jiapeng Zhu',
+        'Ceyuan Yang',
+        'Zifan Shi',
+        'Kecheng Zheng',
+        'Yinghao Xu',
+        'Yujun Shen',
+    ],
+    material_list=[
+        ['arxiv', 'https://arxiv.org/pdf/2309.03904.pdf'],
+        ['Code', 'https://github.com/zhujiapeng/Aurora'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='MTM',
+    figure_path='./assets/projects/mtm.png',
+    title_name='Learning Modulated Transformation in GANs',
+    author_list=[
+        'Ceyuan Yang',
+        'Qihang Zhang',
+        'Yinghao Xu',
+        'Jiapeng Zhu',
+        'Yujun Shen',
+        'Bo Dai',
+    ],
+    material_list=[
+        ['NeurIPS 2023', 'https://arxiv.org/pdf/2308.15472.pdf'],
+        ['Code', 'https://github.com/limbo0000/mtm'],
+    ],
+    award_name=null,
+);
+
+render_project(
     project_name='IDInvert',
     figure_path='./assets/projects/idinvert.jpg',
     title_name='In-Domain GAN Inversion for Real Image Editing',
@@ -187,7 +225,7 @@ render_project(
         'Yujun Shen', 'corresponding',
     ],
     material_list=[
-        ['arXiv', 'https://arxiv.org/pdf/2306.12423.pdf'],
+        ['NeurIPS 2023', 'https://arxiv.org/pdf/2306.12423.pdf'],
         ['Code', 'https://github.com/qiuyu96/carver'],
     ],
     award_name=null,
@@ -206,7 +244,7 @@ render_project(
         'Gordon Wetzstein',
     ],
     material_list=[
-        ['arXiv', 'https://arxiv.org/abs/2307.05462'],
+        ['3DV 2024', 'https://arxiv.org/abs/2307.05462'],
         ['Project', 'https://www.computationalimaging.org/publications/lsv/'],
     ],
     award_name=null,
