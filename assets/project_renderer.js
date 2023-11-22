@@ -154,7 +154,7 @@ render_project(
 render_project(
     project_name='PFLRM',
     figure_path='./assets/projects/pflrm.gif',
-    title_name='DMV3D:Denoising Multi-View Diffusion using 3D Large Reconstruction Model',
+    title_name='PF-LRM: Pose-Free Large Reconstruction Model for Joint Pose and Shape Prediction',
     author_list=[
         "Peng Wang", 
         "Hao Tan",
