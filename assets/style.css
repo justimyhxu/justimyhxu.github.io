@@ -15,7 +15,8 @@ a {
 
 a,
 a:visited {
-  color: #1772d0;
+  /* color: #1772d0; */
+  color: #A4424D;
   text-decoration: none;
 }
 a:focus,
@@ -49,7 +50,7 @@ div.title {
   margin-bottom: 5px;
 }
 div.author {
-  color: #777777;
+  color: #000000;
   font-size: 15px;
   font-weight: 400;
   margin-bottom: 5px;

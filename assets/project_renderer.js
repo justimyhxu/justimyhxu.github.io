@@ -152,6 +152,78 @@ render_project(
 
 // Projects.
 render_project(
+    project_name='PFLRM',
+    figure_path='./assets/projects/pflrm.gif',
+    title_name='DMV3D:Denoising Multi-View Diffusion using 3D Large Reconstruction Model',
+    author_list=[
+        "Peng Wang", 
+        "Hao Tan",
+        "Sai Bi", 
+        "Yinghao Xu", 
+        "Fujun Luan",
+        "Kalyan Sunkavalli", 
+        "Wenping Wang", 
+        "Zexiang Xu", 
+        "Kai Zhang",
+    ],
+    material_list=[
+        ['arxiv', 'https://arxiv.org/pdf/2311.12024.pdf'],
+        ['Project Page', 'https://totoro97.github.io/pf-lrm'],
+    ],
+    award_name=null,
+);
+
+
+render_project(
+    project_name='DMV3D',
+    figure_path='./assets/projects/dmv3d.gif',
+    title_name='DMV3D:Denoising Multi-View Diffusion using 3D Large Reconstruction Model',
+    author_list=[
+        'Yinghao Xu',
+        'Hao Tan', 
+        'Sai Bi',
+        'Peng Wang', 
+        'Jiahao Li', 
+        'Zifan Shi', 
+        'Kalyan Sunkavalli', 
+        'Gordon Wetzstein', 
+        'Zexiang Xu',
+        'Kai Zhang',
+    ],
+    material_list=[
+        ['arxiv', 'https://arxiv.org/pdf/2311.09217.pdf'],
+        ['Project Page', 'https://justimyhxu.github.io/projects/dmv3d/'],
+    ],
+    award_name=null,
+);
+
+
+render_project(
+    project_name='Instant3D',
+    figure_path='./assets/projects/instant3d.gif',
+    title_name='Instant3D: Fast Text-to-3D with Sparse-View Generation and Large Reconstruction Model',
+    author_list=[
+        'Jiahao Li', 
+        'Hao Tan', 
+        'Kai Zhang', 
+        'Zexiang Xu', 
+        'Fujun Luan', 
+        'Yinghao Xu', 
+        'Yicong Hong', 
+        'Kalyan Sunkavalli', 
+        'Greg Shakhnarovich', 
+        'Sai Bi',
+
+    ],
+    material_list=[
+        ['arxiv', 'https://arxiv.org/pdf/2311.06214.pdf'],
+        ['Project Page', 'https://jiahao.ai/instant3d/'],
+    ],
+    award_name=null,
+);
+
+
+render_project(
     project_name='Aurora',
     figure_path='./assets/projects/aurora.jpg',
     title_name='Exploring Sparse MoE in GANs for Text-conditioned Image Synthesis',
@@ -829,26 +901,33 @@ render_author('Dahua Lin', 'http://dahua.site/');
 render_author('Deli Zhao', 'https://scholar.google.com/citations?user=7LhjCn0AAAAJ');
 render_author('Dit-Yan Yeung', 'https://sites.google.com/view/dyyeung');
 render_author('Fangyun Wei', 'https://scholar.google.com/citations?user=-ncz2s8AAAAJ');
-render_author('Guofeng Zhang', 'http://www.cad.zju.edu.cn/home/gfzhang/');
+render_author('Fujun Luan', 'https://luanfujun.com/');
+render_author('Greg Shakhnarovich', 'https://home.ttic.edu/~gregory/');
 render_author('Gordon Wetzstein', 'https://stanford.edu/~gordonwz/');
+render_author('Guofeng Zhang', 'http://www.cad.zju.edu.cn/home/gfzhang/');
 render_author('Han Hu', 'https://ancientmooner.github.io/');
 render_author('Han Xue', 'https://scholar.google.com.hk/citations?user=kQMFnUkAAAAJ&hl');
 render_author('Han Zhou');
 render_author('Hang Zhou', 'https://hangz-nju-cuhk.github.io/');
 render_author('Hao Ouyang', 'https://ken-ouyang.github.io/');
 render_author('Hao Su', 'https://cseweb.ucsd.edu/~haosu/');
+render_author('Hao Tan', 'https://www.cs.unc.edu/~airsplay/');
 render_author('Hsin-Ying Lee', 'http://hsinyinglee.com/');
 render_author('Hongdong Li', 'https://scholar.google.com/citations?user=Mq89JAcAAAAJ');
 render_author('Hujun Bao', 'http://www.cad.zju.edu.cn/home/bao/');
 render_author('Ivan Skorokhodov', 'https://universome.github.io/');
+render_author('Jiahao Li', 'https://jiahao.ai/');
 render_author('Jian Ren', 'https://alanspike.github.io/');
 render_author('Jianping Shi', 'https://shijianping.me/');
 render_author('Jianyuan Wang', 'https://jytime.github.io/');
 render_author('Jiapeng Zhu', 'https://scholar.google.com/citations?user=-ACBm-gAAAAJ');
+render_author('Kai Zhang', 'https://kai-46.github.io/website/');
 render_author('Kecheng Zheng', 'https://scholar.google.com/citations?user=hMDQifQAAAAJ');
+render_author('Kalyan Sunkavalli', 'http://www.kalyans.org/');
 render_author('Liwei Wang', 'http://www.liweiwang-pku.com/');
 render_author('Menglei Chai', 'https://mlchai.com/');
 render_author('Peter Wonka', 'https://peterwonka.net/');
+render_author('Peng Wang', 'https://totoro97.github.io/');
 render_author('Qianqian Wang', 'https://www.cs.cornell.edu/~qqw/');
 render_author('Qianyi Wu', 'https://scholar.google.com/citations?user=XI0RtesAAAAJ');
 render_author('Qifeng Chen', 'https://cqf.io/');
@@ -857,6 +936,7 @@ render_author('Qing Shuai', 'https://chingswy.github.io/');
 render_author('Qingyan Bai', 'https://scholar.google.com/citations?user=xUMjxi4AAAAJ');
 render_author('Qiuyu Wang', 'https://github.com/qiuyu96');
 render_author('Raquel Urtasun', 'http://www.cs.toronto.edu/~urtasun/');
+render_author('Sai Bi', 'https://sai-bi.github.io/');
 render_author('Sergey Tulyakov', 'http://www.stulyakov.com/');
 render_author('Sheng Guo', 'https://scholar.google.com/citations?user=mbpgOmEAAAAJ');
 render_author('Sida Peng', 'https://pengsida.net/');
@@ -864,10 +944,12 @@ render_author('Stephen Lin', 'https://scholar.google.com/citations?user=c3PYmxUA
 render_author('Weihao Xia', 'https://scholar.google.com/citations?user=Egqp5AMAAAAJ');
 render_author('Wang Yifan', 'https://yifita.netlify.app/');
 render_author('Wayne Wu');
+render_author('Wenping Wang', 'https://www.cs.hku.hk/people/academic-staff/wenping');
 render_author('Xian Liu', 'https://alvinliu0.github.io/');
 render_author('Xiao Sun', 'https://jimmysuen.github.io/');
 render_author('Xiaowei Zhou', 'https://xzhou.me/');
 render_author('Xin Dong', 'http://simonxin.com/');
+render_author('Yicong Hong', 'https://yiconghong.me/');
 render_author('Yifei Zhang');
 render_author('Yijin Li');
 render_author('Yinghao Xu', 'https://justimyhxu.github.io/');
@@ -879,6 +961,7 @@ render_author('Yudian Li');
 render_author('Yujiu Yang', 'https://scholar.google.com/citations?user=4gH3sxsAAAAJ');
 render_author('Yujun Shen', 'https://shenyujun.github.io/');
 render_author('Ze Yang', 'https://www.cs.toronto.edu/~zeyang/');
+render_author('Zexiang Xu', 'https://zexiangxu.github.io/');
 render_author('Zhaopeng Cui', 'https://zhpcui.github.io/');
 render_author('Zhirong Wu', 'https://scholar.google.com/citations?user=lH4zgcIAAAAJ');
 render_author('Zhiyi Zhang', 'https://www.brando.dev/');
