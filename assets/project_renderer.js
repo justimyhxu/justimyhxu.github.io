@@ -181,6 +181,7 @@ render_project(
     author_list=[
         'Yinghao Xu',
         'Hao Tan', 
+        'Fujun Luan',
         'Sai Bi',
         'Peng Wang', 
         'Jiahao Li', 
