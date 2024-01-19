@@ -167,10 +167,10 @@ render_project(
         "Kai Zhang",
     ],
     material_list=[
-        ['arxiv', 'https://arxiv.org/pdf/2311.12024.pdf'],
+        ['ICLR 2024', 'https://arxiv.org/pdf/2311.12024.pdf'],
         ['Project Page', 'https://totoro97.github.io/pf-lrm'],
     ],
-    award_name=null,
+    award_name='Spotlight presentation',
 );
 
 
@@ -192,10 +192,10 @@ render_project(
         'Kai Zhang',
     ],
     material_list=[
-        ['arxiv', 'https://arxiv.org/pdf/2311.09217.pdf'],
+        ['ICLR 2024', 'https://arxiv.org/pdf/2311.09217.pdf'],
         ['Project Page', 'https://justimyhxu.github.io/projects/dmv3d/'],
     ],
-    award_name=null,
+    award_name='Spotlight presentation',
 );
 
 
@@ -217,7 +217,7 @@ render_project(
 
     ],
     material_list=[
-        ['arxiv', 'https://arxiv.org/pdf/2311.06214.pdf'],
+        ['ICLR 2024', 'https://arxiv.org/pdf/2311.06214.pdf'],
         ['Project Page', 'https://jiahao.ai/instant3d/'],
     ],
     award_name=null,
@@ -320,7 +320,7 @@ render_project(
         ['3DV 2024', 'https://arxiv.org/abs/2307.05462'],
         ['Project', 'https://www.computationalimaging.org/publications/lsv/'],
     ],
-    award_name=null,
+    award_name='Spotlight presentation',
 );
 
 render_project(
