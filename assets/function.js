@@ -28,6 +28,7 @@ function showPubs(id) {
     var selectedElement = document.getElementById('pubs_selected');
     var byDateElement = document.getElementById('pubs_by_date');
     var byTopicElement = document.getElementById('pubs_by_topic');
+    var byOralElement = document.getElementById('pubs_oral');
   
     if (id == 0) {
       pubsElement.innerHTML = selectedElement.innerHTML;
@@ -35,9 +36,12 @@ function showPubs(id) {
     } else if (id == 1) {
       pubsElement.innerHTML = byDateElement.innerHTML;
       adjustLinkStyles('select1');
-    } else {
+    } else if (id == 2){
       pubsElement.innerHTML = byTopicElement.innerHTML;
       adjustLinkStyles('select2');
+    } else {
+        pubsElement.innerHTML = byOralElement.innerHTML;
+        adjustLinkStyles('select3');
     }
   
     // Ensure scripts are executed
@@ -45,7 +49,7 @@ function showPubs(id) {
   }
   
   function adjustLinkStyles(selectedLinkId) {
-    var linkIds = ['select0', 'select1', 'select2'];
+    var linkIds = ['select0', 'select1', 'select2', 'select3'];
   
     for (var i = 0; i < linkIds.length; i++) {
       var linkElement = document.getElementById(linkIds[i]);
@@ -71,4 +75,20 @@ function showPubs(id) {
     };
 
     document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+
+function toggle_vis(id) {
+    // var e = document.getElementById(id);
+    var e = document.getElementsByClassName(id);
+    var showText = document.getElementById("showText");
+    for (var i = 0; i < e.length; i++) {
+        if (e[i].style.display == "none") {
+            e[i].style.display = "inline";
+            showText.innerHTML = "[Show less]";
+        } else {
+            e[i].style.display = "none";
+            showText.innerHTML = "[Show more]";
+        }
+    }
 }
