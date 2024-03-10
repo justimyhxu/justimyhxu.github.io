@@ -90,13 +90,19 @@ function showPubs(id) {
     }
   }
   
-  function executeScripts(element) {
+//   function executeScripts(element) {
+//     var scripts = element.getElementsByTagName('script');
+//     for (var i = 0; i < scripts.length; i++) {
+//       var script = document.createElement('script');
+//       script.type = 'text/javascript';
+//       script.text = scripts[i].text;
+//       element.appendChild(script).parentNode.removeChild(script);
+//     }
+//   }
+  
+function executeScripts(element) {
     var scripts = element.getElementsByTagName('script');
     for (var i = 0; i < scripts.length; i++) {
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.text = scripts[i].text;
-      element.appendChild(script).parentNode.removeChild(script);
+      eval(scripts[i].innerText);
     }
-  }
-  
+}
