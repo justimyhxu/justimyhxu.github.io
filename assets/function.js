@@ -55,7 +55,7 @@ function showRecruit() {
 
 
 function showPubs(id) {
-    // var pubsElement = document.getElementById('pubs');
+    var pubsElement = document.getElementById('pubs');
     var selectedElement = document.getElementById('pubs_selected');
     var byDateElement = document.getElementById('pubs_by_date');
     var byTopicElement = document.getElementById('pubs_by_topic');
