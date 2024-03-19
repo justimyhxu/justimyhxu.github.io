@@ -167,7 +167,8 @@
               <!-- <span class="author-block"> -->
               <hr style="width:100%;height:0.7px;background-color:rgba(0, 0, 0, 0.665);margin-top:1em">
               A <strong>sparse-view reconstructor</strong> for high-quality, efficient 3D reconstruction
-              (<strong>~0.1s</strong>) and generation (<strong> <8s </strong>)
+              (<strong>~0.1s</strong>) and generation (<strong>
+                <8s </strong>)
             </div>
 
           </div>
@@ -289,76 +290,35 @@ poster="shared-assets/models/NeilArmstrong.webp"  -->
   </section>
 
 
-
-
-
-
-  <section class="hero teaser">
+  <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">
-        <center>Text-to-3D</center>
-      </h2>
-      <br>
-      <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-        <source src="./grm/text-to-3d.mp4" type="video/mp4">
-      </video>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="has-text-centered">
+            <h2 class="title is-3">Text-to-3D</h2>
+          </div>
+          <br>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./grm/text-to-3d.mp4" type="video/mp4">
+          </video>
 
-      <!-- <div class="hero-body">
-
-        <div class="columns is-1 is-multiline is-mobile">
-          <div class="column pb-0 mb-0 is-one-third">
-            <video id="teaser" autoplay muted loop playsinline height="100%">
-              <source src="dmv3d/text-2-3d/12_concat.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column pb-0 mb-0 is-one-third">
-            <video id="teaser" autoplay muted loop playsinline height="100%">
-              <source src="dmv3d/text-2-3d/10_concat.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column pb-0 mb-0 is-one-third">
-            <video id="teaser" autoplay muted loop playsinline height="100%">
-              <source src="dmv3d/text-2-3d/11_concat.mp4" type="video/mp4">
-            </video>
-          </div>
         </div>
-        <div class="columns is-1 is-multiline is-mobile">
-          <div class="column pb-0 mb-0 is-one-third" style="text-align:center;">
-            a race car
-          </div>
-          <div class="column pb-0 mb-0 is-one-third" style="text-align:center;">
-            a donut with pink icingicing
-          </div>
-          <div class="column pb-0 mb-0 is-one-third" style="text-align:center;">
-            a spaceship
-          </div>
-        </div>
-
-      </div> -->
+      </div>
     </div>
   </section>
-  <br>
-  <br>
 
 
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
           <div class="has-text-centered">
-            <h2 class="title is-3">Image-to-3D</h2>
+            <h2 class="title is-3">Comparisons</h2>
           </div>
           <br>
-          <div class="column pb-0 mb-0 is-one-third">
-          <model-viewer src="grm/meshes/0.glb" style="width: 300px; height: 300px;" environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
-          style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls touch-action="pan-y"></model-viewer>
-          </div>
-          <div class="column pb-0 mb-0 is-one-third">
-          <model-viewer src="grm/meshes/1.glb" style="width: 300px; height: 300px;" environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
-          style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls touch-action="pan-y"></model-viewer>
-         </div>
-         <div class="column pb-0 mb-0 is-one-third">
-          <model-viewer src="grm/meshes/2.glb" style="width: 300px; height: 300px;" environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
-          style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls touch-action="pan-y"></model-viewer>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./grm/comparisons.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -366,12 +326,44 @@ poster="shared-assets/models/NeilArmstrong.webp"  -->
 
 
 
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="has-text-centered">
+          
+          <h2 class="title is-3">Image-to-3D</h2>
+        </div>
+        <br>
+        <div class="column pb-0 mb-0 is-one-third">
+          <model-viewer src="grm/meshes/0.glb" style="width: 300px; height: 300px;"
+            environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
+            style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls
+            touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <model-viewer src="grm/meshes/1.glb" style="width: 300px; height: 300px;"
+            environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
+            style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls
+            touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <model-viewer src="grm/meshes/2.glb" style="width: 300px; height: 300px;"
+            environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
+            style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls
+            touch-action="pan-y"></model-viewer>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@misc{xu2023grm,
-      title={DMV3D: Denoising Multi-View Diffusion using 3D Large Reconstruction Model}, 
-      author={Yinghao Xu and Zifan Shi and Wang Yifan and Hansheng Chen and Ceyuan Yang and Sida Peng and Yujun Shen and Gordon Wetzstein},
+      title={GRM: Large Gaussian Reconstruction Model for Efficient 3D Reconstruction and Generation}, 
+      author={Xu Yinghao and Shi Zifan and Yifan Wang and Chen Hansheng and Yang Ceyuan and Peng Sida and Shen Yujun and Wetzstein Gordon},
       year={2024},
       eprint={},
       archivePrefix={arXiv},
@@ -385,9 +377,11 @@ poster="shared-assets/models/NeilArmstrong.webp"  -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">Acknowlegements</h2>
-      <p>We would like to thank Shangzhan Zhang for his help with the demo video, and Minghua Liu for assisting with the evaluation of One-2-3-45++. This project was supported by Google, Samsung, and a Swiss Postdoc Mobility fellowship.</p>
-      </div>
-    </section>
+      <p>We would like to thank Shangzhan Zhang for his help with the demo video, and Minghua Liu for assisting with the
+        evaluation of One-2-3-45++. This project was supported by Google, Samsung, and a Swiss Postdoc Mobility
+        fellowship.</p>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container">

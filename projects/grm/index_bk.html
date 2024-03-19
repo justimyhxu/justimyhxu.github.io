@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="GRM, Gaussian Reconstruction Model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+  <title>GRM: Large Gaussian Reconstruction Model for Efficient 3D Reconstruction and Generation</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
+        "three/controls/OrbitControls": "https://unpkg.com/three@0.156.1/examples/jsm/controls/OrbitControls.js",
+        "three/libs/stats": "https://unpkg.com/three@0.156.1/examples/jsm/libs/stats.module.js"
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://justimyhxu.github.io">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://justimyhxu.github.io/projects/dmv3d/">
+              DMV3D
+            </a>
+            <a class="navbar-item" href="https://yiconghong.me/LRM/">
+              LRM
+            </a>
+            <a class="navbar-item" href="https://jiahao.ai/instant/">
+              Instant3D
+            </a>
+            <a class="navbar-item" href="https://totoro97.github.io/pf-lrm/">
+              PF-LRM
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="dnerf">GRM: Large Gaussian Reconstruction Model <br /> for Efficient 3D Reconstruction and
+                Generation </span>
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://justimyhxu.github.io/">Yinghao Xu</a><sup>1</sup>*,</span>
+              <span class="author-block">
+                <a href="https://vivianszf.github.io/">Zifan Shi</a><sup>1,2</sup>*,</span>
+              <span class="author-block">
+                <a href="https://yifita.netlify.app/">Wang Yifan</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://lakonik.github.io/">Hansheng Chen</a><sup>1</sup>,</span>
+              <br>
+              <span class="author-block">
+                <a href="https://ceyuan.me/">Ceyuan Yang</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://pengsida.net/">Sida Peng</a><sup>4</sup>,</span>
+              <span class="author-block">
+                <a href="https://shenyujun.github.io/">Yujun Shen</a><sup>5</sup>,</span>
+              <span class="author-block">
+                <a href="https://stanford.edu/~gordonwz/">Gordon Wetzstein</a><sup>1</sup>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Stanford Univerity &nbsp&nbsp</span>
+              <span class="author-block"><sup>2</sup>HKUST &nbsp&nbsp</span>
+              <span class="author-block"><sup>3</sup>Shanghai AI Laboratory &nbsp&nbsp</span>
+              <span class="author-block"><sup>4</sup>Zhejiang University &nbsp&nbsp</span>
+              <span class="author-block"><sup>5</sup>Ant Group &nbsp&nbsp</span>
+              <br>
+              * denotes equal contribution
+              <p><br></p>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+
+                  <span class="link-block">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Video Link. -->
+                  <span class="link-block">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Demo</span>
+                    </a>
+                  </span>
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a href="https://github.com/justimyhxu/grm"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="./#BibTeX" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fa fa-quote-left"></i>
+                      </span>
+                      <span>Cite</span>
+                    </a>
+                    <span>
+                </div>
+
+              </div>
+              <!-- <span class="author-block"> -->
+              <hr style="width:100%;height:0.7px;background-color:rgba(0, 0, 0, 0.665);margin-top:1em">
+              A <strong>sparse-view reconstructor</strong> for high-quality, efficient 3D reconstruction
+              (<strong>~0.1s</strong>) and generation (<strong>
+                <8s </strong>)
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <!-- <h1 class="subsubtitle has-text-centered"> <strong>3D generation and composition</strong>: 3D assets are
+          generated by our
+          Text-to-3D or Image-to-3D model. </h1>
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-full">
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/HRYEGmPsc7A?si=1f3SAuxTomYHV1I6&&mute=1&autoplay=1"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <br> -->
+
+        <h1 class="subsubtitle has-text-centered"> <strong>Blender Scene Demo</strong>: 3D assets are
+          reconstructed or generated by our model. </h1>
+        <div class="columns is-1 is-multiline is-mobile">
+          <div class="column pb-0 mb-0 is-full">
+            <video id="teaser" autoplay muted loop playsinline height="100%">
+              <source src="./grm/teaser/blender_demo.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We introduce <strong>GRM</strong>, a large-scale reconstructor capable of recovering a 3D asset from
+              sparse-view images in around 0.1s.
+              <strong>GRM</strong> is a feed-forward transformer-based model that efficiently incorporates multi-view
+              information to translate the input pixels into pixel-aligned Gaussians, which are unprojected to create a
+              set of densely distributed 3D Gaussians representing a scene.
+              Together, our transformer architecture and the use of 3D Gaussians unlock a scalable and efficient
+              reconstruction framework.
+              Extensive experimental results demonstrate the superiority of our method over alternatives regarding both
+              reconstruction quality and efficiency.
+              We also showcase the potential of GRM in generative tasks, i.e., text-to-3D and image-to-3D, by
+              integrating it with existing multi-view diffusion models.
+              <br><br>
+            </p>
+          </div>
+          </object>
+        </div>
+      </div>
+      <img src="./grm/pipeline.png" alt="grm_pipline_figure">
+      <p><strong>Framework</strong>. Given 4 input views, which can be generated from text or a single image, our
+        sparse-view reconstructor estimates the underlying 3D scene in a single feed-forward pass using pixel-aligned
+        Gaussians. The transformer-based sparse-view reconstructor, equipped with a novel transformer-based upsampler,
+        is capable of leveraging long-range visual cues to efficiently generate a large number of 3D Gaussians for
+        high-fidelity 3D reconstruction. </p>
+
+    </div>
+  </section>
+
+
+
+  <!-- ar environment-image="shared-assets/environments/moon_1k.hdr" 
+poster="shared-assets/models/NeilArmstrong.webp"  -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="has-text-centered">
+            <h2 class="title is-3">Sparse-view Reconstruction</h2>
+          </div>
+          <br>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./grm/sparse-view.mp4" type="video/mp4">
+          </video>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="has-text-centered">
+            <h2 class="title is-3">Image-to-3D</h2>
+          </div>
+          <br>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./grm/image-to-3d.mp4" type="video/mp4">
+          </video>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="has-text-centered">
+            <h2 class="title is-3">Text-to-3D</h2>
+          </div>
+          <br>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./grm/text-to-3d.mp4" type="video/mp4">
+          </video>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="has-text-centered">
+            <h2 class="title is-3">Comparisons</h2>
+          </div>
+          <br>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./grm/comparisons.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="has-text-centered">
+          
+          <h2 class="title is-3">Image-to-3D</h2>
+        </div>
+        <br>
+        <div class="column pb-0 mb-0 is-one-third">
+          <model-viewer src="grm/meshes/0.glb" style="width: 300px; height: 300px;"
+            environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
+            style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls
+            touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <model-viewer src="grm/meshes/1.glb" style="width: 300px; height: 300px;"
+            environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
+            style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls
+            touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="column pb-0 mb-0 is-one-third">
+          <model-viewer src="grm/meshes/2.glb" style="width: 300px; height: 300px;"
+            environment-image="grm/pure_grey.png" shadow-intensity="1" orientation="0deg -90deg 0deg"
+            style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;" camera-controls
+            touch-action="pan-y"></model-viewer>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{xu2023grm,
+      title={GRM: Large Gaussian Reconstruction Model for Efficient 3D Reconstruction and Generation}, 
+      author={Xu Yinghao and Shi Zifan and Yifan Wang and Chen Hansheng and Yang Ceyuan and Peng Sida and Shen Yujun and Wetzstein Gordon},
+      year={2024},
+      eprint={},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+</code></pre>
+    </div>
+
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowlegements</h2>
+      <p>We would like to thank Shangzhan Zhang for his help with the demo video, and Minghua Liu for assisting with the
+        evaluation of One-2-3-45++. This project was supported by Google, Samsung, and a Swiss Postdoc Mobility
+        fellowship.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We borrow the source code of this website <a href="https://github.com/nerfies/nerfies.github.io">from here
+              (Nerfies)</a> which is licensed
+            under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
