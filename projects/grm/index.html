@@ -6,6 +6,8 @@
   <meta name="description" content="">
   <meta name="keywords" content="GRM, Gaussian Reconstruction Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
   <title>GRM: Large Gaussian Reconstruction Model for Efficient 3D Reconstruction and Generation</title>
 
 
@@ -36,13 +38,7 @@
       }
     }
   </script>
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
-  <style>
-    model-viewer {
-      width: 300px;
-      height: 300px;
-    }
-  </style>
+
 </head>
 
 <body>
@@ -344,22 +340,23 @@ poster="shared-assets/models/NeilArmstrong.webp"  -->
   <br>
   <br>
 
+
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
           <div class="has-text-centered">
-            <h2 class="title is-3">Exported Mesh</h2>
+            <h2 class="title is-3">Image-to-3D</h2>
           </div>
           <br>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./grm/image-to-3d.mp4" type="video/mp4">
-          </video>
+          <model-viewer src="grm/meshes/0.glb" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+
 
         </div>
       </div>
     </div>
   </section>
+
 
 
   <section class="section" id="BibTeX">
