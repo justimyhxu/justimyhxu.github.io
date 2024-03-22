@@ -13,31 +13,23 @@
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-
-  <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
-
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.156.1/build/three.module.js",
-        "three/controls/OrbitControls": "https://unpkg.com/three@0.156.1/examples/jsm/controls/OrbitControls.js",
-        "three/libs/stats": "https://unpkg.com/three@0.156.1/examples/jsm/libs/stats.module.js"
-      }
-    }
-  </script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
 
 </head>
 
@@ -127,7 +119,7 @@
                 <div class="publication-links">
 
                   <span class="link-block">
-                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://arxiv.org/abs/2403.14621" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
                       </span>
@@ -140,9 +132,18 @@
                       <span class="icon">
                         <i class="fab fa-youtube"></i>
                       </span>
-                      <span>Demo</span>
+                      <span>Demo Video</span>
                     </a>
                   </span>
+
+                  <span class="link-block">
+                    <a href="https://huggingface.co/spaces/Lakonik/MVEdit" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon" style="margin-bottom: 0.35em">&#129303;</span>
+                    <span>HF Demo</span>
+                    </a>
+                  </span>
+
                   <!-- Code Link. -->
                   <span class="link-block">
                     <a href="https://github.com/justimyhxu/grm"
@@ -166,9 +167,7 @@
               </div>
               <!-- <span class="author-block"> -->
               <hr style="width:100%;height:0.7px;background-color:rgba(0, 0, 0, 0.665);margin-top:1em">
-              A <strong>sparse-view reconstructor</strong> for high-quality, efficient 3D reconstruction
-              (<strong>~0.1s</strong>) and generation (<strong>
-                <8s </strong>)
+              A <strong>sparse-view reconstructor</strong> for high-quality, efficient 3D reconstruction (<strong>~0.1s</strong>) and generation (<strong><8s </strong>)
             </div>
 
           </div>
@@ -258,6 +257,44 @@
 poster="shared-assets/models/NeilArmstrong.webp"  -->
 
 
+<section class="hero is-small">
+  <div class="hero-body" style="padding-bottom:0">
+    <div class="container is-max-desktop" >
+      <h2 class="title is-3 has-text-centered" style="padding-bottom:0;margin-bottom:0;padding-top: 2rem">Gallery</h2>
+      <div id="gallery-carousel" class="carousel results-carousel">
+
+        <div class="item">
+          <div class="is-centered has-text-centered">
+            <babylon model="grm/meshes/dragon.glb"></babylon>
+          </div>
+          <h2 class="subtitle has-text-justified is-6">
+            <!-- <br><b>Text-Guided Re-Texturing:</b> <i>An NBA basketball player</i> -->
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="is-centered has-text-centered">
+            <babylon model="grm/meshes/bag.glb"></babylon>
+          </div>
+          <h2 class="subtitle has-text-justified is-6">
+            <!-- <br><b>Text-Guided Re-Texturing:</b> <i>A yellow vintage car</i> -->
+          </h2>
+        </div>
+
+        <div class="item">
+          <div class="is-centered has-text-centered">
+            <babylon model="grm/meshes/bear.glb"></babylon>
+          </div>
+          <h2 class="subtitle has-text-justified is-6">
+            <!-- <br><b>Text-Guided Re-Texturing:</b> <i>A yellow vintage car</i> -->
+          </h2>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -335,7 +372,7 @@ poster="shared-assets/models/NeilArmstrong.webp"  -->
       title={GRM: Large Gaussian Reconstruction Model for Efficient 3D Reconstruction and Generation}, 
       author={Xu Yinghao and Shi Zifan and Yifan Wang and Chen Hansheng and Yang Ceyuan and Peng Sida and Shen Yujun and Wetzstein Gordon},
       year={2024},
-      eprint={},
+      eprint={ 2403.14621},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
