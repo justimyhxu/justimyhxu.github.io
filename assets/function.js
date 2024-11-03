@@ -25,23 +25,31 @@ function parseQuery(query) {
 
 function showPubs(id) {
     var pubsElement = document.getElementById('pubs');
+    var recentElement = document.getElementById('pubs_recent');
     var selectedElement = document.getElementById('pubs_selected');
     var byDateElement = document.getElementById('pubs_by_date');
     var byTopicElement = document.getElementById('pubs_by_topic');
     var byOralElement = document.getElementById('pubs_oral');
   
+    // if (id == -1) {
+    //   pubsElement.innerHTML = pubsElement.innerHTML;
+    //   adjustLinkStyles('select-1');
+    // }
     if (id == 0) {
-      pubsElement.innerHTML = selectedElement.innerHTML;
+      pubsElement.innerHTML = recentElement.innerHTML;
       adjustLinkStyles('select0');
     } else if (id == 1) {
-      pubsElement.innerHTML = byDateElement.innerHTML;
+      pubsElement.innerHTML = selectedElement.innerHTML;
       adjustLinkStyles('select1');
     } else if (id == 2){
-      pubsElement.innerHTML = byTopicElement.innerHTML;
+      pubsElement.innerHTML = byOralElement.innerHTML;
       adjustLinkStyles('select2');
-    } else {
-        pubsElement.innerHTML = byOralElement.innerHTML;
-        adjustLinkStyles('select3');
+    } else if (id == 3){
+      pubsElement.innerHTML = byDateElement.innerHTML;
+      adjustLinkStyles('select3');
+    } else if (id == 4){
+      pubsElement.innerHTML = byTopicElement.innerHTML;
+      adjustLinkStyles('select4');
     }
   
     // Ensure scripts are executed
@@ -49,7 +57,7 @@ function showPubs(id) {
   }
   
   function adjustLinkStyles(selectedLinkId) {
-    var linkIds = ['select0', 'select1', 'select2', 'select3'];
+    var linkIds = ['select0', 'select1', 'select2', 'select3', 'select4'];
   
     for (var i = 0; i < linkIds.length; i++) {
       var linkElement = document.getElementById(linkIds[i]);
