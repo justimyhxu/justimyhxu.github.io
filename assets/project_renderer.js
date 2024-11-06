@@ -1183,6 +1183,7 @@ render_author('Hongdong Li', 'https://scholar.google.com/citations?user=Mq89JAcA
 render_author('Hujun Bao', 'http://www.cad.zju.edu.cn/home/bao/');
 render_author('Ivan Skorokhodov', 'https://universome.github.io/');
 render_author('Jiahao Li', 'https://jiahao.ai/');
+render_author('Jiaming Sun', 'https://jiamingsun.me/');
 render_author('Jian Ren', 'https://alanspike.github.io/');
 render_author('Jianping Shi', 'https://shijianping.me/');
 render_author('Jianyuan Wang', 'https://jytime.github.io/');
