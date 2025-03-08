@@ -162,6 +162,29 @@ render_project(
 
 // Projects.
 render_project(
+    project_name='FLARE',
+    figure_path='./assets/projects/flare.jpg',
+    title_name='FLARE: Feed-forward Geometry, Appearance and Camera Estimation from Uncalibrated Sparse Views',
+    author_list=[
+        "Shangzhan Zhang", "equal",
+        "Jianyuan Wang", "equal",
+        "Yinghao Xu", "equal", 
+        "Nan Xue",
+        "Christian Rupprecht",
+        "Xiaowei Zhou",
+        "Yujun Shen",
+        "Gordon Wetzstein",
+    ],
+    material_list=[
+        ['CVPR 2025', 'https://arxiv.org/abs/2502.12138'],
+        ['Project Page', 'https://zhanghe3z.github.io/FLARE/'], 
+        ['Code', 'https://github.com/ant-research/FLARE'],
+        ['Demo', 'https://zhanghe3z.github.io/FLARE/videos/teaser_video.mp4']
+    ],
+);
+
+
+render_project(
     project_name='im2flow2act',
     figure_path='./assets/projects/im2flow2act.gif',
     title_name='Flow as the Cross-domain Manipulation Interface',
@@ -220,7 +243,7 @@ render_project(
         "Ceyuan Yang",
     ],
     material_list=[
-        ['preprint', 'https://arxiv.org/abs/2405.18424'],
+        ['ICLR 2025', 'https://arxiv.org/abs/2405.18424'],
         ['Project Page', 'https://zqh0253.github.io/3DitScene/'],
         ['Code', 'https://github.com/zqh0253/3DitScene'], 
         ['Demo', 'https://huggingface.co/spaces/qihang/3Dit-Scene'],
@@ -242,7 +265,7 @@ render_project(
         "Ceyuan Yang",     
     ],
     material_list=[
-        ['preprint', 'https://arxiv.org/abs/2404.02101'],
+        ['ICLR 2025', 'https://arxiv.org/abs/2404.02101'],
         ['Project Page', 'https://hehao13.github.io/projects-CameraCtrl/'],
         ['Code', 'https://github.com/hehao13/CameraCtrl'],
         ['Demo', 'https://huggingface.co/spaces/hehao13/CameraCtrl-svd']
@@ -1159,6 +1182,7 @@ render_author('Ceyuan Yang', 'https://ceyuan.me/');
 render_author('Chaoyang Wang', 'https://mightychaos.github.io/');
 render_author('Chen Zhang');
 render_author('Cheng Chi', 'https://cheng-chi.github.io/');
+render_author('Christian Rupprecht', 'https://chrirupp.github.io/');
 render_author('Dahua Lin', 'http://dahua.site/');
 render_author('Deli Zhao', 'https://scholar.google.com/citations?user=7LhjCn0AAAAJ');
 render_author('Dit-Yan Yeung', 'https://sites.google.com/view/dyyeung');
@@ -1169,7 +1193,7 @@ render_author('Gordon Wetzstein', 'https://stanford.edu/~gordonwz/');
 render_author('Guandao Yang', 'https://www.guandaoyang.com/');
 render_author('Guofeng Zhang', 'http://www.cad.zju.edu.cn/home/gfzhang/');
 render_author('Han Hu', 'https://ancientmooner.github.io/');
-render_author('Han Xue', 'https://scholar.google.com.hk/citations?user=kQMFnUkAAAAJ&hl');
+render_author('Han Xue', 'https://xuenan.net/');
 render_author('Han Zhou');
 render_author('Hang Zhou', 'https://hangz-nju-cuhk.github.io/');
 render_author('Hansheng Chen', 'https://lakonik.github.io/');
@@ -1198,6 +1222,7 @@ render_author('Mengda Xu', 'https://mengdaxu.github.io/');
 render_author('Menglei Chai', 'https://mlchai.com/');
 render_author('Mengchen Zhang');
 render_author('Manuela Veloso', 'https://www.jpmorgan.com/technology/artificial-intelligence/about/manuela-veloso');
+render_author('Nan Xue', 'https://xuenan.net/');
 render_author('Peter Wonka', 'https://peterwonka.net/');
 render_author('Peng Wang', 'https://totoro97.github.io/');
 render_author('Qianqian Wang', 'https://www.cs.cornell.edu/~qqw/');
@@ -1212,6 +1237,7 @@ render_author('Raquel Urtasun', 'http://www.cs.toronto.edu/~urtasun/');
 render_author('Ryan Po', 'https://ryanpo.com/');
 render_author('Sai Bi', 'https://sai-bi.github.io/');
 render_author('Sergey Tulyakov', 'http://www.stulyakov.com/');
+render_author('Shangzhan Zhang', 'https://zhanghe3z.github.io');
 render_author('Sheng Guo', 'https://scholar.google.com/citations?user=mbpgOmEAAAAJ');
 render_author('Shengqu Cai', 'https://primecai.github.io/');
 render_author('Shuran Song', 'https://shurans.github.io/');
@@ -1238,6 +1264,7 @@ render_author('Yuanqing Zhang');
 render_author('Yudian Li');
 render_author('Yujiu Yang', 'https://scholar.google.com/citations?user=4gH3sxsAAAAJ');
 render_author('Yujun Shen', 'https://shenyujun.github.io/');
+render_author('Yuwei Guo', 'https://guoyww.github.io/');
 render_author('Ze Yang', 'https://www.cs.toronto.edu/~zeyang/');
 render_author('Zexiang Xu', 'https://zexiangxu.github.io/');
 render_author('Zhaopeng Cui', 'https://zhpcui.github.io/');
