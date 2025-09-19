@@ -99,6 +99,7 @@ function showPubs(id, targetAnchor) {
 }
 
 
+
 function toggle_vis(id) {
     // var e = document.getElementById(id);
     var e = document.getElementsByClassName(id);
