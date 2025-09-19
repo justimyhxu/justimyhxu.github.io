@@ -23,14 +23,14 @@ function parseQuery(query) {
 }
 
 
-function showPubs(id) {
+function showPubs(id, targetAnchor) {
     var pubsElement = document.getElementById('pubs');
     var recentElement = document.getElementById('pubs_recent');
     var selectedElement = document.getElementById('pubs_selected');
     var byDateElement = document.getElementById('pubs_by_date');
     var byTopicElement = document.getElementById('pubs_by_topic');
     var byOralElement = document.getElementById('pubs_oral');
-  
+
     // if (id == -1) {
     //   pubsElement.innerHTML = pubsElement.innerHTML;
     //   adjustLinkStyles('select-1');
@@ -51,9 +51,22 @@ function showPubs(id) {
       pubsElement.innerHTML = byTopicElement.innerHTML;
       adjustLinkStyles('select4');
     }
-  
+
     // Ensure scripts are executed
     loadProjectRenderer();
+
+    // If target anchor is provided, scroll to it after content is loaded
+    if (targetAnchor) {
+      setTimeout(function() {
+        var targetElement = document.getElementById(targetAnchor);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 150);
+    }
   }
   
   function adjustLinkStyles(selectedLinkId) {
@@ -100,3 +113,86 @@ function toggle_vis(id) {
         }
     }
 }
+
+// Navigation Bar Functions
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function scrollToSection(sectionId) {
+    var targetElement = document.getElementById(sectionId);
+    if (targetElement) {
+        var navbarHeight = 60;
+        var targetPosition = targetElement.offsetTop - navbarHeight;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+function toggleMobileMenu() {
+    var navbarMenu = document.querySelector('.navbar-menu');
+    var navbarToggle = document.querySelector('.navbar-toggle');
+
+    if (navbarMenu) {
+        navbarMenu.classList.toggle('mobile-active');
+
+        // Animate hamburger menu
+        if (navbarToggle) {
+            navbarToggle.classList.toggle('active');
+        }
+    }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    var navbarMenu = document.querySelector('.navbar-menu');
+    var navbarToggle = document.querySelector('.navbar-toggle');
+    var navbar = document.querySelector('.fixed-navbar');
+
+    if (navbarMenu && navbarMenu.classList.contains('mobile-active')) {
+        if (!navbar.contains(event.target)) {
+            navbarMenu.classList.remove('mobile-active');
+            if (navbarToggle) {
+                navbarToggle.classList.remove('active');
+            }
+        }
+    }
+});
+
+// Highlight active navigation item based on scroll position
+function updateActiveNavItem() {
+    var sections = ['about', 'publications', 'news', 'experience'];
+    var navItems = document.querySelectorAll('.navbar-item');
+    var scrollPosition = window.scrollY + 80;
+
+    for (var i = 0; i < sections.length; i++) {
+        var section = document.getElementById(sections[i]);
+        if (section) {
+            var sectionTop = section.offsetTop;
+            var sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Remove active class from all nav items
+                navItems.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+
+                // Add active class to current nav item
+                var activeNavItem = document.querySelector('.navbar-item[href="#' + sections[i] + '"]');
+                if (activeNavItem) {
+                    activeNavItem.classList.add('active');
+                }
+                break;
+            }
+        }
+    }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', updateActiveNavItem);
