@@ -72,6 +72,40 @@ table[style*="font-size: 12pt"] img {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+.research-block {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.25rem;
+  font-size: 0.95rem;
+  color: #111827;
+  line-height: 1.6;
+  box-shadow: 0 8px 16px -8px rgba(15, 23, 42, 0.2);
+}
+
+.research-block h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.research-block ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.research-block li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.research-block li:last-child {
+  margin-bottom: 0;
+}
+
 /* Publications Section */
 .content {
   margin-bottom: 2rem;
@@ -122,6 +156,14 @@ li strong {
 
 li font {
   font-size: 15px !important;
+}
+
+.list-year {
+  float: right;
+  margin-left: 1rem;
+  color: #4b5563;
+  font-weight: 500;
+  text-align: right;
 }
 
 /* Publication Layout Improvements */
@@ -621,8 +663,8 @@ div.material {
   font-size: 15px;
   font-weight: 400;
 }
-div.award {
-  color: #FF0000;
+#pubs td div.award {
+  color: #A4424D;
   font-size: 14.4px;
   font-weight: 400;
   margin-top: 5px;

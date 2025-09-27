@@ -452,7 +452,7 @@ render_project(
         ['ICLR 2024', 'https://arxiv.org/pdf/2311.12024.pdf'],
         ['Project Page', 'https://totoro97.github.io/pf-lrm'],
     ],
-    award_name='Spotlight presentation',
+    award_name='Spotlight',
 );
 
 
@@ -477,7 +477,7 @@ render_project(
         ['ICLR 2024', 'https://arxiv.org/pdf/2311.09217.pdf'],
         ['Project Page', 'https://justimyhxu.github.io/projects/dmv3d/'],
     ],
-    award_name='Spotlight presentation',
+    award_name='Spotlight',
 );
 
 
@@ -602,7 +602,7 @@ render_project(
         ['3DV 2024', 'https://arxiv.org/abs/2307.05462'],
         ['Project', 'https://www.computationalimaging.org/publications/lsv/'],
     ],
-    award_name='Spotlight presentation',
+    award_name='Spotlight',
 );
 
 render_project(
@@ -751,7 +751,7 @@ render_project(
         ['Project', 'https://snap-research.github.io/3dgp/'],
         ['Code', 'https://github.com/snap-research/3dgp']
     ],
-    award_name='Oral presentation',
+    award_name='Oral',
 )
 
 render_project(
@@ -791,7 +791,7 @@ render_project(
         ['Code', 'https://github.com/vivianszf/geod'],
         ['Demo', 'https://www.youtube.com/watch?v=qqAxEMSUYiE'],
     ],
-    award_name='Spotlight presentation',
+    award_name='Spotlight',
 );
 
 render_project(
@@ -851,7 +851,7 @@ render_project(
         ['Project', 'https://alvinliu0.github.io/projects/SSP-NeRF'],
         ['Code', 'https://github.com/alvinliu0/SSP-NeRF'],
     ],
-    award_name='Oral presentation',
+    award_name='Oral',
 );
 
 render_project(
@@ -957,7 +957,7 @@ render_project(
         ['CVPR 2022', 'https://arxiv.org/pdf/2112.09690.pdf'],
         ['Project', 'https://justimyhxu.github.io/projects/cmpl/'],
     ],
-    award_name='Oral presentation',
+    award_name='Oral',
 );
 
 render_project(
@@ -1016,7 +1016,7 @@ render_project(
         ['Project', 'https://genforce.github.io/ghfeat/'],
         ['Code', 'https://github.com/genforce/ghfeat'],
     ],
-    award_name='Oral presentation',
+    award_name='Oral',
 );
 
 render_project(
@@ -1233,6 +1233,7 @@ render_author('Qing Shuai', 'https://chingswy.github.io/');
 render_author('Qingyan Bai', 'https://scholar.google.com/citations?user=xUMjxi4AAAAJ');
 render_author('Qiuyu Wang', 'https://github.com/qiuyu96');
 render_author('Rameen Abdal', 'https://rameenabdal.github.io/');
+render_author('Ruizhi Shao', 'https://ruizhis.github.io/');
 render_author('Raquel Urtasun', 'http://www.cs.toronto.edu/~urtasun/');
 render_author('Ryan Po', 'https://ryanpo.com/');
 render_author('Sai Bi', 'https://sai-bi.github.io/');
@@ -1265,6 +1266,7 @@ render_author('Yudian Li');
 render_author('Yujiu Yang', 'https://scholar.google.com/citations?user=4gH3sxsAAAAJ');
 render_author('Yujun Shen', 'https://shenyujun.github.io/');
 render_author('Yuwei Guo', 'https://guoyww.github.io/');
+render_author('Yang Zheng', 'https://profiles.stanford.edu/yang-zheng');
 render_author('Ze Yang', 'https://www.cs.toronto.edu/~zeyang/');
 render_author('Zexiang Xu', 'https://zexiangxu.github.io/');
 render_author('Zhaopeng Cui', 'https://zhpcui.github.io/');
