@@ -1,0 +1,155 @@
+/**
+ * Layout Styles
+ * 布局样式 - 页面结构和容器
+ */
+
+/* ============================================
+   MAIN CONTAINER - 主容器
+   ============================================ */
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+
+/* ============================================
+   PAGE STRUCTURE - 页面结构
+   ============================================ */
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+
+/* ============================================
+   SECTIONS - 区块
+   ============================================ */
+
+section {
+  margin-bottom: var(--spacing-section);
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+/* Section 标题 */
+.section-heading {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-element);
+  padding-bottom: var(--spacing-tight);
+  border-bottom: var(--border-width-medium) solid var(--color-border-light);
+}
+
+
+/* ============================================
+   HERO SECTION - 头部区块
+   ============================================ */
+
+.hero {
+  display: flex;
+  gap: var(--spacing-component);
+  align-items: flex-start;
+  margin-bottom: var(--spacing-section);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-avatar {
+  flex-shrink: 0;
+}
+
+.hero-avatar img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-name {
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-tight);
+  color: var(--color-text-primary);
+}
+
+.hero-title {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-item);
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-tight);
+  font-size: var(--font-size-base);
+  align-items: center;
+}
+
+.hero-links a {
+  display: inline-block;
+}
+
+.hero-links .separator {
+  color: var(--color-text-muted);
+  user-select: none;
+}
+
+.hero-bio {
+  margin-top: var(--spacing-element);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-loose);
+  color: var(--color-text-primary);
+  text-align: justify;
+}
+
+
+/* ============================================
+   RESPONSIVE - 移动端布局
+   ============================================ */
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Hero 区块纵向排列 */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-element);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-avatar img {
+    width: var(--avatar-size-mobile);
+    height: var(--avatar-size-mobile);
+  }
+
+  .hero-links {
+    justify-content: center;
+  }
+
+  .hero-bio {
+    text-align: left; /* 正文还是左对齐,更易读 */
+  }
+}

@@ -1,0 +1,218 @@
+/**
+ * Base Styles
+ * 基础样式 - 重置浏览器默认样式,设置全局基础
+ */
+
+/* ============================================
+   CSS RESET - 现代化重置
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* 设置基准字号,所有rem基于此 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* 支持用户偏好:减少动画时禁用平滑滚动 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ============================================
+   BODY - 页面主体
+   ============================================ */
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-loose);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ============================================
+   TYPOGRAPHY - 排版元素
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--spacing-element);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--spacing-item);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--spacing-compact);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-item);
+  line-height: var(--line-height-loose);
+}
+
+/* 最后一个段落/元素不需要底部边距 */
+p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ============================================
+   LINKS - 链接
+   ============================================ */
+
+a {
+  color: var(--color-link-default);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+a:visited {
+  /* 可选:如果希望显示已访问链接 */
+  /* color: var(--color-link-visited); */
+}
+
+/* 焦点可见性(无障碍) */
+a:focus-visible {
+  outline: 2px solid var(--color-link-default);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+
+/* ============================================
+   LISTS - 列表
+   ============================================ */
+
+ul, ol {
+  margin: 0;
+  padding-left: 1.5rem;
+  line-height: var(--line-height-relaxed);
+}
+
+li {
+  margin-bottom: var(--spacing-compact);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ============================================
+   IMAGES - 图片
+   ============================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ============================================
+   STRONG & EMPHASIS - 强调元素
+   ============================================ */
+
+strong, b {
+  font-weight: var(--font-weight-semibold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+
+/* ============================================
+   CODE & PRE - 代码(如果需要)
+   ============================================ */
+
+code {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+  background-color: var(--color-bg-secondary);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.875rem;
+  background-color: var(--color-bg-secondary);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+
+/* ============================================
+   UTILITY CLASSES - 工具类
+   ============================================ */
+
+/* 屏幕阅读器专用(无障碍) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 文字截断 */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
