@@ -60,10 +60,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-extrabold);  /* Phase 3: 600 → 800 */
   line-height: var(--line-height-normal);
   letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-text-primary);
+  color: var(--color-text-heading);  /* Phase 3: pure black for headings */
   margin-top: 0;
 }
 

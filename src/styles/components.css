@@ -22,8 +22,11 @@
   margin-bottom: 0;
 }
 
+/* Phase 3: Improved news date formatting */
 .news-date {
-  font-weight: var(--font-weight-semibold);
+  display: inline-block;
+  min-width: 5.5rem;  /* Fixed width for alignment */
+  font-weight: var(--font-weight-bold);  /* Phase 3: 600 → 700 */
   color: var(--color-text-secondary);
   margin-right: var(--spacing-tight);
 }
