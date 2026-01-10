@@ -98,15 +98,16 @@ section:last-child {
   margin-bottom: 0;
 }
 
-/* Section 标题 (Phase 3: extrabold + pure black) */
+/* Section 标题 (Vincent style: bold black text with underline) */
 .section-heading {
   font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-extrabold);  /* Phase 3: 600 → 800 */
-  color: var(--color-text-heading);  /* Phase 3: pure black */
-  margin-top: 1.5rem;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-text-heading);
+  margin-top: 0;
   margin-bottom: var(--spacing-element);
-  padding-bottom: 0.25rem;
-  border-bottom: var(--border-width-medium) solid var(--color-border-light);
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--color-text-heading);  /* Thicker, black underline */
+  display: inline-block;  /* Underline only under text, not full width */
 }
 
 
