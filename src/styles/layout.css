@@ -37,13 +37,14 @@ section:last-child {
   margin-bottom: 0;
 }
 
-/* Section 标题 */
+/* Section 标题 (from Vincent's H2 style) */
 .section-heading {
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
+  margin-top: 1.5rem;
   margin-bottom: var(--spacing-element);
-  padding-bottom: var(--spacing-tight);
+  padding-bottom: 0.25rem;
   border-bottom: var(--border-width-medium) solid var(--color-border-light);
 }
 
