@@ -58,14 +58,23 @@
 .publication-list {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;  /* Larger gap between publications */
+  gap: 0;  /* Remove gap, use border instead */
 }
 
 .publication-item {
   display: flex;
   gap: 2rem;  /* More space between image and content */
-  padding: 0;  /* Remove padding, cleaner look */
+  padding: 2.5rem 0;  /* Vertical padding for spacing */
+  border-bottom: 1px solid var(--color-border-light);  /* Separator line */
   transition: none;  /* No hover background */
+}
+
+.publication-item:first-child {
+  padding-top: 0;  /* No top padding for first item */
+}
+
+.publication-item:last-child {
+  border-bottom: none;  /* No border after last item */
 }
 
 .publication-image {
