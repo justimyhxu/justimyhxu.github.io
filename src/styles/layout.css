@@ -9,20 +9,29 @@
 
 .top-nav {
   width: 100%;
-  border-bottom: 1px solid var(--color-border-light);
   background-color: var(--color-bg-primary);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .top-nav-container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 1.5rem var(--container-padding);
+  padding: 0.8rem var(--container-padding);
+  padding-bottom: 1rem;  /* Vincent's padding-bottom */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+/* 分隔线 - 可调节长度 */
+.top-nav-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--container-padding);
+  width: calc(100% - var(--container-padding) * 2);  /* 手动调节：改变这个值来调节分隔线长度，如 80%, 600px 等 */
+  height: 1px;
+  background-color: var(--color-border-light);
 }
 
 .top-nav-identity {
@@ -30,17 +39,19 @@
 }
 
 .top-nav-name {
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-extrabold);
+  font-size: 2rem;  /* Vincent: 2rem = 32px */
+  font-weight: 700;  /* Vincent: 700 */
   color: var(--color-text-heading);
   margin: 0;
+  margin-bottom: 0.25rem;  /* Vincent's margin-bottom */
   line-height: 1.2;
 }
 
-.top-nav-title {
-  font-size: 0.9375rem;
-  color: var(--color-text-secondary);
-  margin: 0.25rem 0 0 0;
+.top-nav-title,
+.subtitle {
+  font-size: 1rem;  /* Vincent: 1rem = 16px */
+  color: var(--color-text-muted);  /* Vincent: --color-muted */
+  margin: 0;
   font-weight: var(--font-weight-normal);
 }
 
@@ -81,99 +92,130 @@
    ============================================ */
 
 main {
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 
 
 /* ============================================
-   SECTIONS - 区块
+   SECTIONS - 区块 (Vincent style spacing)
    ============================================ */
 
 section {
-  margin-bottom: var(--spacing-section);
+  margin-bottom: 0.85rem;  /* tighter spacing between sections */
 }
 
 section:last-child {
   margin-bottom: 0;
 }
 
-/* Section 标题 (Vincent style: bold black text with underline) */
+/* Section 标题 (Vincent style: simple bold text) */
 .section-heading {
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-extrabold);
+  font-size: 1.5rem;  /* Vincent: 1.5rem = 24px */
+  font-weight: 600;  /* Vincent: 700, not 800 */
   color: var(--color-text-heading);
-  margin-top: 0;
-  margin-bottom: var(--spacing-element);
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid var(--color-text-heading);  /* Thicker, black underline */
-  display: inline-block;  /* Underline only under text, not full width */
+  margin-top: 1.5rem;  /* Compact: reduced from 1.5rem */
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid var(--color-text-heading);
+  display: inline-block;
 }
 
 
 /* ============================================
-   HERO SECTION - 头部区块
+   HERO SECTION - 头部区块 (Vincent style)
    ============================================ */
 
 .hero {
   display: flex;
-  gap: var(--spacing-component);
+  justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: var(--spacing-section);
-  margin-top: 0;  /* Reduce top margin since we have nav */
+  gap: 3rem;  /* Vincent's gap */
+  margin-bottom: 0.6rem;  /* tighter spacing before next section */
+  padding: 1rem 0;  /* reduce vertical padding to shrink gap */
 }
 
-.hero-content {
+.hero-text {
   flex: 1;
+  max-width: 65%;  /* Vincent's max-width for text */
+  margin-top: 2rem;  /* 手动调节：增加这个值让文字更靠下 */
 }
 
 .hero-avatar {
-  flex-shrink: 0;
+  flex-shrink: 0;  /* Vincent's flex-shrink */
+  margin-top: 2.5rem;  /* 手动调节：增加这个值让头像更靠下 */
 }
 
 .hero-avatar img {
-  width: var(--avatar-size);
-  height: var(--avatar-size);
+  width: 200px;   /* Vincent's avatar size */
+  height: 200px;
   border-radius: var(--radius-full);
   object-fit: cover;
-  box-shadow: var(--shadow-md);
 }
 
-/* Remove hero-name and hero-title as they're now in top nav */
-
-/* Contact links (Vincent style: plain text with separators) */
+/* Contact links (Vincent style: button-style badges) */
 .hero-links {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-tight);
-  font-size: var(--font-size-base);
-  align-items: center;
-  margin-bottom: var(--spacing-element);
+  align-items: center;  /* 垂直居中对齐所有按钮 */
+  gap: 0.5rem;  /* Vincent's gap */
+  margin-top: 0.00rem;  /* tighten gap to text */
+  font-size: 1.00rem;  /* Vincent's font-size: 14px */
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.hero-links li {
+  display: flex;
+  align-items: center;  /* 确保内容垂直居中 */
+  border-radius: 6px;  /* Vincent's border-radius */
+  border: 1px solid var(--color-border-light);
+  background-color: var(--color-bg-secondary);
+  transition: all 0.25s ease-out;
+  margin: 0;
+}
+
+.hero-links li:hover {
+  background-color: var(--color-bg-primary);
+  border-color: var(--color-link-default);
 }
 
 .hero-links a {
-  display: inline;
-  color: var(--color-link-default);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;  /* 文字和图标之间的间距 */
+  padding: 0.5em 0.875em;  /* Vincent's padding */
+  color: var(--color-text-primary);
   text-decoration: none;
-  transition: color var(--transition-base);
+  width: 100%;
 }
 
 .hero-links a:hover {
-  color: var(--color-link-hover);
-  text-decoration: underline;
+  color: var(--color-text-primary);
+  text-decoration: none;
 }
 
-.hero-links .separator {
-  color: var(--color-text-muted);
-  user-select: none;
+.hero-links svg {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
 .hero-bio {
-  margin-top: var(--spacing-element);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-loose);
+  font-size: 1.05rem;  /* Vincent's intro-quote font-size */
+  line-height: 1.45;   /* Vincent's line-height */
   color: var(--color-text-primary);
-  text-align: justify;
+  margin-bottom: 0.75rem;  /* Vincent's margin-bottom */
+}
+
+.hero-bio .greeting {
+  font-size: 1.75rem;  /* Vincent's greeting font-size */
+  font-weight: 700;
+  margin-top: 0;       /* 手动调节：标题上方间距 */
+  margin-bottom: 0.75rem;  /* 手动调节：标题下方间距 */
+  border-bottom: none;  /* 移除默认的下划线 */
+  display: block;
 }
 
 
@@ -200,23 +242,21 @@ section:last-child {
     font-size: 0.9375rem;
   }
 
-  /* Hero 区块纵向排列 */
+  /* Hero 区块纵向排列 (Vincent style) */
   .hero {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: var(--spacing-element);
+    gap: 1.5rem;  /* Vincent's mobile gap */
   }
 
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .hero-text {
+    max-width: 100%;
+    text-align: center;  /* Center on mobile */
   }
 
   .hero-avatar img {
-    width: var(--avatar-size-mobile);
-    height: var(--avatar-size-mobile);
+    width: 150px;   /* Vincent's mobile avatar size */
+    height: 150px;
   }
 
   .hero-links {

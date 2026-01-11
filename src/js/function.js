@@ -24,38 +24,39 @@ function parseQuery(query) {
 
 
 function showPubs(id, targetAnchor) {
-    var pubsElement = document.getElementById('pubs');
-    var recentElement = document.getElementById('pubs_recent');
-    var selectedElement = document.getElementById('pubs_selected');
-    var byDateElement = document.getElementById('pubs_by_date');
-    var byTopicElement = document.getElementById('pubs_by_topic');
-    var byOralElement = document.getElementById('pubs_oral');
+    // Hide all publication sections
+    var allSections = ['pubs_recent', 'pubs_selected', 'pubs_by_date', 'pubs_by_topic', 'pubs_oral'];
+    for (var i = 0; i < allSections.length; i++) {
+      var section = document.getElementById(allSections[i]);
+      if (section) {
+        section.style.display = 'none';
+      }
+    }
 
-    // if (id == -1) {
-    //   pubsElement.innerHTML = pubsElement.innerHTML;
-    //   adjustLinkStyles('select-1');
-    // }
+    // Show the selected section
+    var targetSection = null;
     if (id == 0) {
-      pubsElement.innerHTML = recentElement.innerHTML;
+      targetSection = document.getElementById('pubs_recent');
       adjustLinkStyles('select0');
     } else if (id == 1) {
-      pubsElement.innerHTML = selectedElement.innerHTML;
+      targetSection = document.getElementById('pubs_selected');
       adjustLinkStyles('select1');
-    } else if (id == 2){
-      pubsElement.innerHTML = byOralElement.innerHTML;
+    } else if (id == 2) {
+      targetSection = document.getElementById('pubs_oral');
       adjustLinkStyles('select2');
-    } else if (id == 3){
-      pubsElement.innerHTML = byDateElement.innerHTML;
+    } else if (id == 3) {
+      targetSection = document.getElementById('pubs_by_date');
       adjustLinkStyles('select3');
-    } else if (id == 4){
-      pubsElement.innerHTML = byTopicElement.innerHTML;
+    } else if (id == 4) {
+      targetSection = document.getElementById('pubs_by_topic');
       adjustLinkStyles('select4');
     }
 
-    // Ensure scripts are executed
-    loadProjectRenderer();
+    if (targetSection) {
+      targetSection.style.display = 'block';
+    }
 
-    // If target anchor is provided, scroll to it after content is loaded
+    // If target anchor is provided, scroll to it
     if (targetAnchor) {
       setTimeout(function() {
         var targetElement = document.getElementById(targetAnchor);
@@ -65,7 +66,7 @@ function showPubs(id, targetAnchor) {
             block: 'start'
           });
         }
-      }, 150);
+      }, 100);
     }
   }
   
@@ -74,6 +75,9 @@ function showPubs(id, targetAnchor) {
   
     for (var i = 0; i < linkIds.length; i++) {
       var linkElement = document.getElementById(linkIds[i]);
+      if (!linkElement) {
+        continue;
+      }
       if (linkIds[i] === selectedLinkId) {
         linkElement.style.textDecoration = 'underline';
         linkElement.style.color = '#000000';
@@ -84,12 +88,12 @@ function showPubs(id, targetAnchor) {
     }
   }
   
-  function loadProjectRenderer() {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = './assets/project_renderer.js';
+function loadProjectRenderer() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = './src/js/project_renderer.js';
 
-    script.src += '?t=' + new Date().getTime();
+  script.src += '?t=' + new Date().getTime();
 
     script.onload = function() {
         this.parentNode.removeChild(this);
@@ -106,7 +110,9 @@ function toggle_vis(id) {
     var showText = document.getElementById("showText");
     for (var i = 0; i < e.length; i++) {
         if (e[i].style.display == "none") {
-            e[i].style.display = "inline";
+            // Use sensible defaults based on element type to avoid inline stacking
+            var defaultDisplay = e[i].tagName === 'LI' ? 'list-item' : 'block';
+            e[i].style.display = defaultDisplay;
             showText.innerHTML = "[Show less]";
         } else {
             e[i].style.display = "none";

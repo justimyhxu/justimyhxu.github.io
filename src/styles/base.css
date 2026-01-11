@@ -133,7 +133,7 @@ ul, ol {
 }
 
 li {
-  margin-bottom: var(--spacing-compact);
+  margin-bottom: 0.00rem;  /* Compact: reduced from --spacing-compact (0.75rem) */
 }
 
 li:last-child {

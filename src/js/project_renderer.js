@@ -6,99 +6,145 @@ function render_project(project_name,
                         author_list,
                         material_list,
                         award_name=null) {
-    if (document.getElementsByName(project_name).length === 0) {
+    // Use querySelectorAll for better compatibility with dynamic content
+    var rows = document.querySelectorAll('#pubs [name="' + project_name + '"]');
+    if (rows.length === 0) {
         return;
     }
 
-    var media;
-    if (figure_path.endsWith('.mp4') || figure_path.endsWith('.webm')) {
-        media = document.createElement('video');
-        media.src = figure_path;
-        media.setAttribute('style', 'width: 100%; max-height: 100px; object-fit: cover;');
-        media.muted = true;
-        media.autoplay = true;
-        media.loop = true;
-        // // media.setAttribute('autoplay', 'autoplay');
-        // // media.setAttribute('controls', 'controls');
-        // // auto play
-        // // media.setAttribute('', 'autoplay');
-        // // 尝试在创建后立即播放
-        // media.play().catch(error => {
-        //     console.error("Autoplay was prevented: ", error);       
-        // });
+    // Render ALL occurrences of this project (for multiple views)
+    for (var rowIdx = 0; rowIdx < rows.length; rowIdx++) {
+        var row = rows[rowIdx];
 
-    } else {
-        media = document.createElement('img');
-        media.src = figure_path;
-        media.setAttribute('style', 'width: 100%; max-height: 100px; object-fit: cover;');
-    }
+        // Skip if already rendered (check for child elements)
+        if (row.children && row.children.length > 0) {
+            continue;
+        }
 
-    var title = document.createElement('div');
-    title.setAttribute('class', 'title');
-    title.innerHTML = title_name;
-
-    var author = document.createElement('div');
-    author.setAttribute('class', 'author');
-    author.innerHTML = '';
-    for (var idx = 0; idx < author_list.length; idx++) {
-        if (idx < author_list.length - 1 &&
-            (author_list[idx + 1] == 'equal' ||
-             author_list[idx + 1] == 'corresponding')) {
-            author.innerHTML += (
-                '<span name="' +
-                author_list[idx] +
-                '" title="' +
-                author_list[idx + 1] +
-                '"></span>');
-            idx++
+        var media;
+        if (figure_path.endsWith('.mp4') || figure_path.endsWith('.webm')) {
+            media = document.createElement('video');
+            media.src = figure_path;
+            media.muted = true;
+            media.autoplay = true;
+            media.loop = true;
+            media.playsInline = true;
         } else {
-            author.innerHTML += (
-                '<span name="' +
-                author_list[idx] +
-                '" title="' +
-                '"></span>');
+            media = document.createElement('img');
+            media.src = figure_path;
         }
-        if (idx < author_list.length - 1) {
-            author.innerHTML += ', ';
+
+        var title = document.createElement('div');
+        title.setAttribute('class', 'title');
+        title.innerHTML = title_name;
+
+        var author = document.createElement('div');
+        author.setAttribute('class', 'author');
+        author.innerHTML = '';
+        for (var idx = 0; idx < author_list.length; idx++) {
+            if (idx < author_list.length - 1 &&
+                (author_list[idx + 1] == 'equal' ||
+                 author_list[idx + 1] == 'corresponding')) {
+                author.innerHTML += (
+                    '<span name="' +
+                    author_list[idx] +
+                    '" title="' +
+                    author_list[idx + 1] +
+                    '"></span>');
+                idx++
+            } else {
+                author.innerHTML += (
+                    '<span name="' +
+                    author_list[idx] +
+                    '" title="' +
+                    '"></span>');
+            }
+            if (idx < author_list.length - 1) {
+                author.innerHTML += ', ';
+            }
         }
-    }
 
-    var material = document.createElement('div');
-    material.setAttribute('class', 'material');
-    material_list.innerHTML = '';
-    for (var idx = 0; idx < material_list.length; idx++) {
-        material.innerHTML += (
-            '<a href="' +
-            material_list[idx][1] +
-            '" target="_blank">' +
-            material_list[idx][0] +
-            '</a>');
-        if (idx < material_list.length - 1) {
-            material.innerHTML += ' / ';
+        // Extract venue from first material item (if it looks like a venue)
+        var venue_name = null;
+        var paper_url = null;
+        var links_start_idx = 0;
+
+        if (material_list.length > 0) {
+            var first_item = material_list[0][0];
+            // Check if first item is a venue (contains year or known venue names)
+            var venue_patterns = ['CVPR', 'ICCV', 'ECCV', 'NeurIPS', 'ICML', 'ICLR', 'SIGGRAPH', 'CoRL', '3DV', 'TPAMI', 'arXiv', 'arxiv', 'CVPRW', 'AAAI'];
+            var is_venue = venue_patterns.some(function(pattern) {
+                return first_item.indexOf(pattern) !== -1;
+            });
+
+            if (is_venue) {
+                venue_name = first_item;
+                paper_url = material_list[0][1];
+                links_start_idx = 1;
+            }
         }
-    }
 
-    if (award_name) {
-        var award = document.createElement('div');
-        award.setAttribute('class', 'award');
-        award.innerHTML = award_name;
-    }
+        // Create venue line with award (Vincent style: Award • Venue)
+        var venue_line = document.createElement('div');
+        venue_line.setAttribute('class', 'venue-line');
 
-    var row = document.getElementsByName(project_name)[0];
-    var cell = row.insertCell(0);
-    cell.setAttribute('width', '25%');
-    cell.appendChild(media);
-    cell = row.insertCell(1);
-    cell.appendChild(title);
-    cell.appendChild(author);
-    cell.appendChild(material);
-    if (award_name) {
-        cell.appendChild(award);
+        if (award_name && award_name !== '') {
+            venue_line.innerHTML = '<span class="award">' + award_name + '</span>';
+            if (venue_name) {
+                venue_line.innerHTML += ' · ';
+            }
+        }
+
+        if (venue_name) {
+            // Parse venue to make venue name bold (e.g., "CVPR 2025" -> "<b>CVPR</b> 2025")
+            var venue_parts = venue_name.match(/^([A-Za-z\s]+)(.*)$/);
+            if (venue_parts) {
+                venue_line.innerHTML += '<span class="venue"><b>' + venue_parts[1].trim() + '</b> ' + venue_parts[2] + '</span>';
+            } else {
+                venue_line.innerHTML += '<span class="venue">' + venue_name + '</span>';
+            }
+        }
+
+        // Create material links (no "/" separator, Vincent style)
+        var material = document.createElement('div');
+        material.setAttribute('class', 'material');
+
+        // Add Paper link first if we have paper_url
+        if (paper_url && paper_url !== '') {
+            material.innerHTML += '<a href="' + paper_url + '" target="_blank">Paper</a>';
+        }
+
+        // Add remaining links (no "/" separator)
+        for (var idx = links_start_idx; idx < material_list.length; idx++) {
+            if (material.innerHTML !== '') {
+                material.innerHTML += ' ';  // Just space, no "/"
+            }
+            material.innerHTML += (
+                '<a href="' +
+                material_list[idx][1] +
+                '" target="_blank">' +
+                material_list[idx][0] +
+                '</a>');
+        }
+
+        // Use createElement instead of insertCell for better compatibility
+        var cell1 = document.createElement('td');
+        cell1.setAttribute('width', '25%');
+        cell1.appendChild(media);
+        row.appendChild(cell1);
+
+        var cell2 = document.createElement('td');
+        cell2.appendChild(title);
+        cell2.appendChild(author);
+        cell2.appendChild(venue_line);
+        cell2.appendChild(material);
+        row.appendChild(cell2);
     }
 };
 
 function render_author(author_name, link=null, alias=null) {
-    var list = document.getElementsByName(author_name);
+    // Use querySelectorAll for better compatibility with dynamic content
+    var list = document.querySelectorAll('#pubs [name="' + author_name + '"]');
     for (var idx = 0; idx < list.length; idx++) {
         var contribution = list[idx].title;
         var tailing = '';
@@ -181,6 +227,140 @@ render_project(
         ['Code', 'https://github.com/ant-research/FLARE'],
         ['Demo', 'https://zhanghe3z.github.io/FLARE/videos/teaser_video.mp4']
     ],
+);
+
+render_project(
+    project_name='MoC',
+    figure_path='https://primecai.github.io/moc/videos/overview_video.mp4',
+    title_name='Mixture of Contexts for Long Video Generation',
+    author_list=[
+        "Shengqu Cai",
+        "Ceyuan Yang",
+        "Lvmin Zhang",
+        "Yuwei Guo",
+        "Junfei Xiao",
+        "Ziyan Yang",
+        "Yinghao Xu",
+        "Zhenheng Yang",
+        "Alan Yuille",
+        "Leonidas Guibas",
+        "Maneesh Agrawala",
+        "Lu Jiang",
+        "Gordon Wetzstein",
+    ],
+    material_list=[
+        ['arXiv 2025', 'https://arxiv.org/abs/2508.21058'],
+        ['Project Page', 'https://primecai.github.io/moc/'],
+    ],
+    award_name='',
+);
+
+render_project(
+    project_name='VWM',
+    figure_path='https://spmem.github.io/static/images/teaser.jpg',
+    title_name='Video World Models with Long-term Spatial Memory',
+    author_list=[
+        "Tong Wu",
+        "Shuai Yang",
+        "Ryan Po",
+        "Yinghao Xu",
+        "Ziwei Liu",
+        "Dahua Lin",
+        "Gordon Wetzstein",
+    ],
+    material_list=[
+        ['NeurIPS 2025', 'https://arxiv.org/abs/2506.05284'],
+        ['Project Page', 'https://spmem.github.io/'],
+    ],
+    award_name='',
+);
+
+render_project(
+    project_name='ISA4D',
+    figure_path='https://dsaurus.github.io/isa4d/isa_assets/isa_title_demo.mp4',
+    title_name='Interspatial Attention for Efficient 4D Human Video Generation',
+    author_list=[
+        "Ruizhi Shao", "equal",
+        "Yinghao Xu", "equal",
+        "Yujun Shen",
+        "Ceyuan Yang",
+        "Yang Zheng",
+        "Changan Chen",
+        "Yebin Liu",
+        "Gordon Wetzstein",
+    ],
+    material_list=[
+        ['SIGGRAPH 2025', 'https://arxiv.org/abs/2505.15800'],
+        ['Project Page', 'https://dsaurus.github.io/isa4d/'],
+        ['Code', 'https://github.com/DSaurus/ISA4D_code'],
+    ],
+    award_name='',
+);
+
+render_project(
+    project_name='GroomLight',
+    figure_path='https://syntec-research.github.io/GroomLight/static/videos/357_1.mp4',
+    title_name='GroomLight: Hybrid Inverse Rendering for Relightable Human Hair Appearance Modeling',
+    author_list=[
+        "Yang Zheng",
+        "Menglei Chai",
+        "Delio Vicini",
+        "Yuxiao Zhou",
+        "Yinghao Xu",
+        "Leonidas Guibas",
+        "Gordon Wetzstein",
+        "Thabo Beeler",
+    ],
+    material_list=[
+        ['CVPR 2025', 'https://arxiv.org/abs/2503.10597'],
+        ['Project Page', 'https://syntec-research.github.io/GroomLight'],
+    ],
+    award_name='',
+);
+
+render_project(
+    project_name='CameraCtrl2',
+    figure_path='https://seaweed.video/projects/cameractrl2/assets/extension_indoor.mp4',
+    title_name='CameraCtrl II: Dynamic Scene Exploration via Camera-controlled Video Diffusion Models',
+    author_list=[
+        "Hao He",
+        "Ceyuan Yang",
+        "Shanchuan Lin",
+        "Yinghao Xu",
+        "Meng Wei",
+        "Liangke Gui",
+        "Qi Zhao",
+        "Gordon Wetzstein",
+        "Lu Jiang",
+        "Hongsheng Li",
+    ],
+    material_list=[
+        ['ICCV 2025', 'https://arxiv.org/abs/2503.10592'],
+        ['Project Page', 'https://hehao13.github.io/Projects-CameraCtrl-II/'],
+    ],
+    award_name='',
+);
+
+render_project(
+    project_name='Edicho',
+    figure_path='https://ant-research.github.io/edicho/assets/teaser.jpg',
+    title_name='Edicho: Consistent Image Editing in the Wild',
+    author_list=[
+        "Qingyan Bai",
+        "Hao Ouyang",
+        "Yinghao Xu",
+        "Qiuyu Wang",
+        "Ceyuan Yang",
+        "Ka Leong Cheng",
+        "Yujun Shen",
+        "Qifeng Chen",
+    ],
+    material_list=[
+        ['ICCV 2025', 'https://arxiv.org/abs/2412.21079'],
+        ['Project Page', 'https://ant-research.github.io/edicho/'],
+        ['Code', 'https://github.com/ant-research/edicho'],
+    ],
+    award_name='',
 );
 
 
@@ -1020,7 +1200,7 @@ render_project(
 );
 
 render_project(
-    poject_name='Neuralbody',
+    project_name='Neuralbody',
     figure_path='./assets/projects/nueralbody.png',
     title_name='Neural Body: Implicit Neural Representations with Structured Latent Codes for Novel View Synthesis of Dynamic Humans',
     author_list=[
@@ -1278,3 +1458,21 @@ render_author('Ziwei Liu', 'https://liuziwei7.github.io/');
 render_author('Zhiyuan Yu', '')
 render_author('Zhen Xu', 'https://zhenx.me/');
 render_author('Zhenjia Xu', 'https://www.zhenjiaxu.com/');
+render_author('Lvmin Zhang', 'https://lvminzhang.com/');
+render_author('Junfei Xiao');
+render_author('Ziyan Yang');
+render_author('Zhenheng Yang');
+render_author('Alan Yuille', 'http://www.cs.jhu.edu/~ayuille/');
+render_author('Maneesh Agrawala', 'https://graphics.stanford.edu/~maneesh/');
+render_author('Lu Jiang');
+render_author('Shuai Yang');
+render_author('Changan Chen');
+render_author('Yebin Liu', 'https://www.liuyebin.com/');
+render_author('Delio Vicini');
+render_author('Yuxiao Zhou');
+render_author('Thabo Beeler');
+render_author('Shanchuan Lin');
+render_author('Meng Wei');
+render_author('Liangke Gui');
+render_author('Qi Zhao');
+render_author('Ka Leong Cheng', 'https://kaleongcheng.github.io/');
