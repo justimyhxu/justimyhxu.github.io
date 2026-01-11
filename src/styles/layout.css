@@ -218,6 +218,28 @@ section:last-child {
   display: block;
 }
 
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.site-footer a {
+  color: var(--color-link-default);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 
 /* ============================================
    RESPONSIVE - 移动端布局
