@@ -397,13 +397,35 @@
   }
 
   /* Filters - 堆叠显示 */
-  .filter-links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+  .section-heading .inline-filters {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.35rem;
+    line-height: 1.4;
   }
 
   .filter-section {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .filter-label {
+    margin-right: 0;
+    font-size: var(--font-size-small);
+  }
+
+  .filter-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.5rem;
+    font-size: var(--font-size-small);
+  }
+
+  .filter-links .separator {
+    display: none;
   }
 }
