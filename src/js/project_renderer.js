@@ -458,7 +458,7 @@ render_project(
 
 render_project(
     project_name='im2flow2act',
-    figure_path='./assets/projects/im2flow2act.gif',
+    figure_path='./assets/projects/im2flow2act.mp4',
     title_name='Flow as the Cross-domain Manipulation Interface',
     author_list=[
        "Mengda Xu",
@@ -503,7 +503,7 @@ render_project(
 
 render_project(
     project_name='3DitScene',
-    figure_path='./assets/projects/3ditscene.gif',
+    figure_path='./assets/projects/3ditscene.mp4',
     title_name='3DitScene: Editing Any Scene via Language-guided Disentangled Gaussian Splatting',
     author_list=[
         "Qihang Zhang",
@@ -638,7 +638,7 @@ render_project(
 
 render_project(
     project_name='BerfScene',
-    figure_path='./assets/projects/berfscene.gif',
+    figure_path='./assets/projects/berfscene.mp4',
     title_name='BerfScene: Bev-conditioned Equivariant Radiance Fields for Infinite 3D Scene Generation',
     author_list=[
         "Qihang Zhang", 
@@ -683,7 +683,7 @@ render_project(
 
 render_project(
     project_name='GSM',
-    figure_path='./assets/projects/gsm.gif',
+    figure_path='./assets/projects/gsm.mp4',
     title_name='Gaussian Shell Maps for Efficient 3D Human Generation',
     author_list=[
         "Rameen Abdal",'equal',
@@ -730,7 +730,7 @@ render_project(
 
 render_project(
     project_name='DMV3D',
-    figure_path='./assets/projects/dmv3d.gif',
+    figure_path='./assets/projects/dmv3d.mp4',
     title_name='DMV3D:Denoising Multi-View Diffusion using 3D Large Reconstruction Model',
     author_list=[
         'Yinghao Xu',
@@ -755,7 +755,7 @@ render_project(
 
 render_project(
     project_name='Instant3D',
-    figure_path='./assets/projects/instant3d.gif',
+    figure_path='./assets/projects/instant3d.mp4',
     title_name='Instant3D: Fast Text-to-3D with Sparse-View Generation and Large Reconstruction Model',
     author_list=[
         'Jiahao Li', 
@@ -988,7 +988,7 @@ render_project(
 
 render_project(
     project_name='StyleSV',
-    figure_path='./assets/projects/stylesv.gif',
+    figure_path='./assets/projects/stylesv.mp4',
     title_name='Towards Smooth Video Composition',
     author_list=[
         'Qihang Zhang',
