@@ -72,18 +72,16 @@ function showPubs(id, targetAnchor) {
   
   function adjustLinkStyles(selectedLinkId) {
     var linkIds = ['select0', 'select1', 'select2', 'select3', 'select4'];
-  
+
     for (var i = 0; i < linkIds.length; i++) {
       var linkElement = document.getElementById(linkIds[i]);
       if (!linkElement) {
         continue;
       }
       if (linkIds[i] === selectedLinkId) {
-        linkElement.style.textDecoration = 'underline';
-        linkElement.style.color = '#000000';
+        linkElement.classList.add('active');
       } else {
-        linkElement.style.textDecoration = '';
-        linkElement.style.color = '';
+        linkElement.classList.remove('active');
       }
     }
   }

@@ -313,13 +313,11 @@
 
 .section-heading .inline-filters a.active {
   text-decoration: underline;
+  color: #000000;
 }
 
 .filter-links {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.1rem;  /* 无间距 */
-  align-items: center;
+  display: inline;
   font-size: var(--font-size-tiny);  /* 14px，更小的字体 */
 }
 

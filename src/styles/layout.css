@@ -128,6 +128,7 @@ section:last-child {
 
 .hero {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   gap: 3rem;  /* Vincent's gap */
@@ -143,7 +144,7 @@ section:last-child {
 
 .hero-avatar {
   flex-shrink: 0;  /* Vincent's flex-shrink */
-  margin-top: 2.5rem;  /* 手动调节：增加这个值让头像更靠下 */
+  margin-top: 4.5rem;  /* 手动调节：增加这个值让头像更靠下 */
 }
 
 .hero-avatar img {
@@ -216,6 +217,17 @@ section:last-child {
   margin-bottom: 0.75rem;  /* 手动调节：标题下方间距 */
   border-bottom: none;  /* 移除默认的下划线 */
   display: block;
+}
+
+.bio-callout {
+  width: 100%;
+  margin: 0.75rem 0 0 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #2196F3;
+  background-color: #f5f5f5;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--color-text-primary);
 }
 
 /* ============================================

@@ -207,6 +207,98 @@ render_project(
 
 
 // Projects.
+
+render_project(
+    project_name='CausalWM',
+    figure_path='./assets/projects/lingbot-va.mp4',
+    title_name='Causal World Modeling for Robot Control',
+    author_list=[
+        "Lin Li", "equal",
+        "Qihang Zhang", "equal",
+        "Yiming Luo", "equal",
+        "Shuai Yang",
+        "Ruilin Wang",
+        "Fei Han",
+        "Mingrui Yu",
+        "Zelin Gao",
+        "Nan Xue",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Yinghao Xu",
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2601.21998'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-va'],
+        ['Code', 'https://github.com/Robbyant/lingbot-va'],
+        ['Model', 'https://huggingface.co/collections/robbyant/lingbot-va']
+    ],
+    award_name='',
+);
+
+render_project(
+    project_name='OpenWM',
+    figure_path='./assets/projects/lingbot-world.mp4',
+    title_name='Advancing Open-source World Models',
+    author_list=[
+        "Zelin Gao",
+        "Qiuyu Wang",
+        "Yanhong Zeng",
+        "Jiapeng Zhu",
+        "Ka Leong Cheng",
+        "Yixuan Li",
+        "Hanlin Wang",
+        "Yinghao Xu",
+        "Shuailei Ma",
+        "Yihang Chen",
+        "Jie Liu",
+        "Yansong Cheng",
+        "Yao Yao",
+        "Jiayi Zhu",
+        "Yihao Meng",
+        "Kecheng Zheng",
+        "Qingyan Bai",
+        "Jingye Chen",
+        "Zehong Shen",
+        "Yue Yu",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Hao Ouyang",
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2601.20540'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-world'],
+        ['Code', 'https://github.com/Robbyant/lingbot-world'],
+        ['Model', 'https://huggingface.co/collections/robbyant/lingbot-world']
+    ],
+    award_name='',
+);
+
+render_project(
+    project_name='MDM',
+    figure_path='./assets/projects/lingbot-depth.mp4',
+    title_name='Masked Depth Modeling for Spatial Perception',
+    author_list=[
+        "Bin Tan",
+        "Changjiang Sun",
+        "Xiage Qin",
+        "Hanat Adai",
+        "Zelin Fu",
+        "Tianxiang Zhou",
+        "Han Zhang",
+        "Yinghao Xu",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Nan Xue",
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2601.17895'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-depth'],
+        ['Code', 'https://github.com/Robbyant/lingbot-depth'],
+        ['Model', 'https://huggingface.co/collections/robbyant/lingbot-depth']
+    ],
+    award_name='',
+);
+
 render_project(
     project_name='FLARE',
     figure_path='./assets/projects/flare.jpg',
@@ -231,7 +323,7 @@ render_project(
 
 render_project(
     project_name='MoC',
-    figure_path='https://primecai.github.io/moc/videos/overview_video.mp4',
+    figure_path='assets/projects/moc.mp4',
     title_name='Mixture of Contexts for Long Video Generation',
     author_list=[
         "Shengqu Cai",
@@ -249,7 +341,7 @@ render_project(
         "Gordon Wetzstein",
     ],
     material_list=[
-        ['arXiv 2025', 'https://arxiv.org/abs/2508.21058'],
+        ['ICLR 2026', 'https://arxiv.org/abs/2508.21058'],
         ['Project Page', 'https://primecai.github.io/moc/'],
     ],
     award_name='',
@@ -257,7 +349,7 @@ render_project(
 
 render_project(
     project_name='VWM',
-    figure_path='https://spmem.github.io/static/images/teaser.jpg',
+    figure_path='assets/projects/spmem.jpg',
     title_name='Video World Models with Long-term Spatial Memory',
     author_list=[
         "Tong Wu",
@@ -277,7 +369,7 @@ render_project(
 
 render_project(
     project_name='ISA4D',
-    figure_path='https://dsaurus.github.io/isa4d/isa_assets/isa_title_demo.mp4',
+    figure_path='assets/projects/isa.mp4',
     title_name='Interspatial Attention for Efficient 4D Human Video Generation',
     author_list=[
         "Ruizhi Shao", "equal",
@@ -299,7 +391,7 @@ render_project(
 
 render_project(
     project_name='GroomLight',
-    figure_path='https://syntec-research.github.io/GroomLight/static/videos/357_1.mp4',
+    figure_path='./assets/projects/groomlight.mp4',
     title_name='GroomLight: Hybrid Inverse Rendering for Relightable Human Hair Appearance Modeling',
     author_list=[
         "Yang Zheng",
@@ -320,7 +412,7 @@ render_project(
 
 render_project(
     project_name='CameraCtrl2',
-    figure_path='https://seaweed.video/projects/cameractrl2/assets/extension_indoor.mp4',
+    figure_path='./assets/projects/cameractrl2.mp4',
     title_name='CameraCtrl II: Dynamic Scene Exploration via Camera-controlled Video Diffusion Models',
     author_list=[
         "Hao He",
@@ -343,7 +435,7 @@ render_project(
 
 render_project(
     project_name='Edicho',
-    figure_path='https://ant-research.github.io/edicho/assets/teaser.jpg',
+    figure_path='./assets/projects/edicho.jpg',
     title_name='Edicho: Consistent Image Editing in the Wild',
     author_list=[
         "Qingyan Bai",
@@ -1476,3 +1568,33 @@ render_author('Meng Wei');
 render_author('Liangke Gui');
 render_author('Qi Zhao');
 render_author('Ka Leong Cheng', 'https://kaleongcheng.github.io/');
+
+// New authors for CausalWM, OpenWM, MDM
+render_author('Lin Li');
+render_author('Yiming Luo');
+render_author('Ruilin Wang');
+render_author('Fei Han');
+render_author('Mingrui Yu');
+render_author('Zelin Gao');
+render_author('Xing Zhu');
+render_author('Robbyant Team');
+render_author('Yanhong Zeng');
+render_author('Yixuan Li');
+render_author('Hanlin Wang');
+render_author('Shuailei Ma');
+render_author('Yihang Chen');
+render_author('Jie Liu');
+render_author('Yansong Cheng');
+render_author('Yao Yao');
+render_author('Jiayi Zhu');
+render_author('Yihao Meng');
+render_author('Jingye Chen');
+render_author('Zehong Shen');
+render_author('Yue Yu');
+render_author('Bin Tan');
+render_author('Changjiang Sun');
+render_author('Xiage Qin');
+render_author('Hanat Adai');
+render_author('Zelin Fu');
+render_author('Tianxiang Zhou');
+render_author('Han Zhang');

@@ -60,10 +60,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-extrabold);  /* Phase 3: 600 → 800 */
+  font-weight: var(--font-weight-extrabold);
   line-height: var(--line-height-normal);
   letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-text-heading);  /* Phase 3: pure black for headings */
+  color: var(--color-text-heading);
   margin-top: 0;
 }
 
@@ -133,7 +133,7 @@ ul, ol {
 }
 
 li {
-  margin-bottom: 0.00rem;  /* Compact: reduced from --spacing-compact (0.75rem) */
+  margin-bottom: 0.00rem;
 }
 
 li:last-child {
