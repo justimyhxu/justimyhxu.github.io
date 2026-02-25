@@ -57,7 +57,7 @@
 
 .top-nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -102,7 +102,7 @@ main {
    ============================================ */
 
 section {
-  margin-bottom: 0.85rem;  /* tighter spacing between sections */
+  margin-bottom: 1.25rem;  /* Vincent: ~1.25rem between sections */
 }
 
 section:last-child {
@@ -132,19 +132,18 @@ section:last-child {
   justify-content: space-between;
   align-items: flex-start;
   gap: 3rem;  /* Vincent's gap */
-  margin-bottom: 0.6rem;  /* tighter spacing before next section */
-  padding: 1rem 0;  /* reduce vertical padding to shrink gap */
+  margin-bottom: 1.5rem;  /* Vincent: 1.5rem after hero */
+  padding: 1rem 0 1.5rem 0;  /* top breathing room + bottom spacing */
 }
 
 .hero-text {
   flex: 1;
   max-width: 65%;  /* Vincent's max-width for text */
-  margin-top: 2rem;  /* 手动调节：增加这个值让文字更靠下 */
 }
 
 .hero-avatar {
-  flex-shrink: 0;  /* Vincent's flex-shrink */
-  margin-top: 4.5rem;  /* 手动调节：增加这个值让头像更靠下 */
+  flex-shrink: 0;
+  margin-top: 4.5rem;
 }
 
 .hero-avatar img {
@@ -160,8 +159,8 @@ section:last-child {
   flex-wrap: wrap;
   align-items: center;  /* 垂直居中对齐所有按钮 */
   gap: 0.5rem;  /* Vincent's gap */
-  margin-top: 0.00rem;  /* tighten gap to text */
-  font-size: 1.00rem;  /* Vincent's font-size: 14px */
+  margin-top: 0.75rem;  /* Vincent: 0.75rem gap to text */
+  font-size: 0.875rem;  /* Vincent: 14px */
   list-style: none;
   padding: 0;
   margin-bottom: 0;
@@ -236,9 +235,9 @@ section:last-child {
 
 .site-footer {
   text-align: center;
-  padding: 1rem 0;
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  font-size: 0.875rem;
   color: var(--color-text-muted);
   border-top: 1px solid var(--color-border-light);
 }
@@ -263,17 +262,19 @@ section:last-child {
     padding-bottom: 3rem;
   }
 
-  /* Top navigation mobile */
+  /* Top navigation mobile - centered like Vincent's */
   .top-nav-container {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
     padding: 1rem var(--container-padding-mobile);
   }
 
   .top-nav-links {
     gap: 1.25rem;
     font-size: 0.9375rem;
+    justify-content: center;
   }
 
   /* Hero 区块纵向排列 (Vincent style) */
@@ -288,6 +289,11 @@ section:last-child {
     text-align: center;  /* Center on mobile */
   }
 
+  .hero-avatar {
+    margin-top: 0;
+    order: 0;
+  }
+
   .hero-avatar img {
     width: 150px;   /* Vincent's mobile avatar size */
     height: 150px;
@@ -299,5 +305,13 @@ section:last-child {
 
   .hero-bio {
     text-align: left; /* 正文还是左对齐,更易读 */
+  }
+
+  .hero-bio .greeting {
+    text-align: center;
+  }
+
+  .bio-callout {
+    text-align: left;
   }
 }

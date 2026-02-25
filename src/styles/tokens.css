@@ -63,7 +63,7 @@
   --line-height-loose: 1.6;           /* 正文 */
 
   /* Font Weights - 字重 */
-  --font-weight-normal: 400;          /* 常规 */
+  --font-weight-normal: 400;          /* Regular - Vincent style */
   --font-weight-medium: 500;          /* 中等 */
   --font-weight-semibold: 600;        /* 半粗 */
   --font-weight-bold: 700;            /* 粗体 */
@@ -97,7 +97,7 @@
      ============================================ */
 
   /* Container Widths - 容器宽度 (from Vincent's site) */
-  --container-max-width: 850px;       /* 主内容最大宽度 (Vincent: 800px) */
+  --container-max-width: 800px;       /* 主内容最大宽度 (Vincent: 800px) */
 
   /* Component Sizes - 组件尺寸 (Phase 3: larger avatar) */
   --avatar-size: 240px;               /* 头像尺寸 (Phase 3: 200px → 240px) */
