@@ -144,6 +144,7 @@ section:last-child {
 .hero-avatar {
   flex-shrink: 0;
   margin-top: 4.5rem;
+  text-align: center;
 }
 
 .hero-avatar img {
@@ -151,6 +152,21 @@ section:last-child {
   height: 200px;
   border-radius: var(--radius-full);
   object-fit: cover;
+}
+
+.contact-card {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+
+.contact-card p {
+  margin: 0.2rem 0;
+}
+
+.contact-card p strong {
+  color: var(--color-text-primary);
 }
 
 /* Contact links (Vincent style: button-style badges) */
