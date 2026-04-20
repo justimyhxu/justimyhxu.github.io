@@ -300,6 +300,31 @@ render_project(
 );
 
 render_project(
+    project_name='GCT',
+    figure_path='./assets/projects/lingbot-map.mp4',
+    title_name='Geometric Context Transformer for Streaming 3D Reconstruction',
+    author_list=[
+        "Linzhuo Chen", "equal",
+        "Jian Gao", "equal",
+        "Yihang Chen",
+        "Ka Leong Cheng",
+        "Yipengjing Sun",
+        "Liangxiao Hu",
+        "Nan Xue",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Yao Yao", "corresponding",
+        "Yinghao Xu", "corresponding",
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2604.14141'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-map'],
+        ['Code', 'https://github.com/robbyant/lingbot-map'],
+    ],
+    award_name='',
+);
+
+render_project(
     project_name='FLARE',
     figure_path='./assets/projects/flare.jpg',
     title_name='FLARE: Feed-forward Geometry, Appearance and Camera Estimation from Uncalibrated Sparse Views',
@@ -1577,13 +1602,13 @@ render_author('Ruilin Wang');
 render_author('Fei Han');
 render_author('Mingrui Yu', 'https://mingrui-yu.github.io/');
 render_author('Zelin Gao', 'https://zelingao98.github.io/');
-render_author('Xing Zhu');
+render_author('Xing Zhu', 'https://scholar.google.com/citations?user=Hnh87z4AAAAJ&hl=en');
 render_author('Robbyant Team');
 render_author('Yanhong Zeng', 'https://zengyh1900.github.io/');
 render_author('Yixuan Li');
 render_author('Hanlin Wang');
 render_author('Shuailei Ma', 'https://scholar.google.com/citations?hl=en&user=TdOvhxcAAAAJ');
-render_author('Yihang Chen');
+render_author('Yihang Chen', 'https://sh17c.top/');
 render_author('Jie Liu');
 render_author('Yansong Cheng');
 render_author('Yao Yao', 'https://yoyo000.github.io/');
@@ -1599,3 +1624,7 @@ render_author('Hanat Adai');
 render_author('Zelin Fu');
 render_author('Tianxiang Zhou');
 render_author('Han Zhang');
+render_author('Linzhuo Chen', 'https://linzhuo.xyz/');
+render_author('Jian Gao', 'https://ygaojiany.github.io/');
+render_author('Yipengjing Sun');
+render_author('Liangxiao Hu');
