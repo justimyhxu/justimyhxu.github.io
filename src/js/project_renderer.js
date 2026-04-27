@@ -300,6 +300,58 @@ render_project(
 );
 
 render_project(
+    project_name='SceneScribe1M',
+    figure_path='./assets/projects/scenescribe.png',
+    title_name='SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations',
+    author_list=[
+        "Yunnan Wang",
+        "Kecheng Zheng",
+        "Jianyuan Wang",
+        "Minghao Chen",
+        "David Novotny",
+        "Christian Rupprecht",
+        "Yinghao Xu",
+        "Xing Zhu",
+        "Wenjun Zeng",
+        "Xin Jin",
+        "Yujun Shen",
+    ],
+    material_list=[
+        ['CVPR 2026', 'https://arxiv.org/abs/2604.07990'],
+        ['Project Page', 'https://wangyunnan.github.io/SceneScribe-1M/'],
+    ],
+    award_name='Highlight',
+);
+
+render_project(
+    project_name='Ditto',
+    figure_path='./assets/projects/ditto.mp4',
+    title_name='Ditto: Scaling Instruction-Based Video Editing with a High-Quality Synthetic Dataset',
+    author_list=[
+        "Qingyan Bai",
+        "Qiuyu Wang",
+        "Hao Ouyang",
+        "Yue Yu",
+        "Hanlin Wang",
+        "Wen Wang",
+        "Ka Leong Cheng",
+        "Shuailei Ma",
+        "Yanhong Zeng",
+        "Zichen Liu",
+        "Yinghao Xu",
+        "Yujun Shen",
+        "Qifeng Chen",
+    ],
+    material_list=[
+        ['CVPR 2026', 'https://arxiv.org/abs/2510.15742'],
+        ['Project Page', 'https://editto.net/'],
+        ['Code', 'https://github.com/EzioBy/Ditto'],
+        ['Model', 'https://huggingface.co/QingyanBai/Ditto_models'],
+    ],
+    award_name='Highlight',
+);
+
+render_project(
     project_name='GCT',
     figure_path='./assets/projects/lingbot-map.mp4',
     title_name='Geometric Context Transformer for Streaming 3D Reconstruction',
@@ -1624,6 +1676,13 @@ render_author('Hanat Adai');
 render_author('Zelin Fu');
 render_author('Tianxiang Zhou');
 render_author('Han Zhang');
+render_author('Yunnan Wang', 'https://wangyunnan.github.io/');
+render_author('Minghao Chen', 'https://silent-chen.github.io/');
+render_author('David Novotny', 'https://d-novotny.github.io/');
+render_author('Wenjun Zeng', 'https://scholar.google.com/citations?user=_cUfvYQAAAAJ');
+render_author('Xin Jin', 'https://srameo.github.io/');
+render_author('Wen Wang', 'https://encounter1997.github.io/');
+render_author('Zichen Liu', 'https://zichenliu.github.io/');
 render_author('Linzhuo Chen', 'https://linzhuo.xyz/');
 render_author('Jian Gao', 'https://ygaojiany.github.io/');
 render_author('Yipengjing Sun');
