@@ -297,3 +297,27 @@ span.highlight {
     text-align: left;
   }
 }
+
+/* Version toggle (e.g., arXiv vs Conference) for publication cards */
+#pubs .version-toggle {
+  margin: 4px 0 6px;
+  font-size: 0.85em;
+}
+#pubs .version-toggle .version-tab {
+  cursor: pointer;
+  margin-right: 10px;
+  color: #888;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+}
+#pubs .version-toggle .version-tab:hover {
+  color: inherit;
+}
+#pubs .version-toggle .version-tab.is-active {
+  color: inherit;
+  border-bottom-color: currentColor;
+  font-weight: 600;
+}
+#pubs .pub-version[hidden] {
+  display: none;
+}

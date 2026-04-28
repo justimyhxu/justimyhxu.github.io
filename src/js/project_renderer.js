@@ -1,16 +1,118 @@
 // Functions.
 
+function _build_author_div(author_list) {
+    var author = document.createElement('div');
+    author.setAttribute('class', 'author');
+    author.innerHTML = '';
+    for (var idx = 0; idx < author_list.length; idx++) {
+        if (idx < author_list.length - 1 &&
+            (author_list[idx + 1] == 'equal' ||
+             author_list[idx + 1] == 'corresponding')) {
+            author.innerHTML += (
+                '<span name="' +
+                author_list[idx] +
+                '" title="' +
+                author_list[idx + 1] +
+                '"></span>');
+            idx++
+        } else {
+            author.innerHTML += (
+                '<span name="' +
+                author_list[idx] +
+                '" title="' +
+                '"></span>');
+        }
+        if (idx < author_list.length - 1) {
+            author.innerHTML += ', ';
+        }
+    }
+    return author;
+}
+
+function _build_venue_and_material(material_list, award_name) {
+    // Extract venue from first material item (if it looks like a venue)
+    var venue_name = null;
+    var paper_url = null;
+    var links_start_idx = 0;
+
+    if (material_list && material_list.length > 0) {
+        var first_item = material_list[0][0];
+        var venue_patterns = ['CVPR', 'ICCV', 'ECCV', 'NeurIPS', 'ICML', 'ICLR', 'SIGGRAPH', 'CoRL', '3DV', 'TPAMI', 'arXiv', 'arxiv', 'CVPRW', 'AAAI', 'RSS'];
+        var is_venue = venue_patterns.some(function(pattern) {
+            return first_item.indexOf(pattern) !== -1;
+        });
+
+        if (is_venue) {
+            venue_name = first_item;
+            paper_url = material_list[0][1];
+            links_start_idx = 1;
+        }
+    }
+
+    var venue_line = document.createElement('div');
+    venue_line.setAttribute('class', 'venue-line');
+
+    if (award_name && award_name !== '') {
+        venue_line.innerHTML = '<span class="award">' + award_name + '</span>';
+        if (venue_name) {
+            venue_line.innerHTML += ' · ';
+        }
+    }
+
+    if (venue_name) {
+        var venue_parts = venue_name.match(/^([A-Za-z\s]+)(.*)$/);
+        if (venue_parts) {
+            venue_line.innerHTML += '<span class="venue"><b>' + venue_parts[1].trim() + '</b> ' + venue_parts[2] + '</span>';
+        } else {
+            venue_line.innerHTML += '<span class="venue">' + venue_name + '</span>';
+        }
+    }
+
+    var material = document.createElement('div');
+    material.setAttribute('class', 'material');
+
+    if (paper_url && paper_url !== '') {
+        material.innerHTML += '<a href="' + paper_url + '" target="_blank">Paper</a>';
+    }
+
+    for (var idx = links_start_idx; material_list && idx < material_list.length; idx++) {
+        if (material.innerHTML !== '') {
+            material.innerHTML += ' ';
+        }
+        material.innerHTML += (
+            '<a href="' +
+            material_list[idx][1] +
+            '" target="_blank">' +
+            material_list[idx][0] +
+            '</a>');
+    }
+
+    return { venueEl: venue_line, materialEl: material };
+}
+
+function _build_version(author_list, material_list, award_name) {
+    var authorEl = _build_author_div(author_list);
+    var vm = _build_venue_and_material(material_list, award_name);
+    return { authorEl: authorEl, venueEl: vm.venueEl, materialEl: vm.materialEl };
+}
+
 function render_project(project_name,
                         figure_path,
                         title_name,
                         author_list,
                         material_list,
-                        award_name=null) {
+                        award_name=null,
+                        conference_author_list=null,
+                        conference_material_list=null,
+                        primary_label='arXiv version',
+                        conference_label='Conference version') {
     // Use querySelectorAll for better compatibility with dynamic content
     var rows = document.querySelectorAll('#pubs [name="' + project_name + '"]');
     if (rows.length === 0) {
         return;
     }
+
+    var has_conference = conference_author_list != null;
 
     // Render ALL occurrences of this project (for multiple views)
     for (var rowIdx = 0; rowIdx < rows.length; rowIdx++) {
@@ -38,94 +140,7 @@ function render_project(project_name,
         title.setAttribute('class', 'title');
         title.innerHTML = title_name;
 
-        var author = document.createElement('div');
-        author.setAttribute('class', 'author');
-        author.innerHTML = '';
-        for (var idx = 0; idx < author_list.length; idx++) {
-            if (idx < author_list.length - 1 &&
-                (author_list[idx + 1] == 'equal' ||
-                 author_list[idx + 1] == 'corresponding')) {
-                author.innerHTML += (
-                    '<span name="' +
-                    author_list[idx] +
-                    '" title="' +
-                    author_list[idx + 1] +
-                    '"></span>');
-                idx++
-            } else {
-                author.innerHTML += (
-                    '<span name="' +
-                    author_list[idx] +
-                    '" title="' +
-                    '"></span>');
-            }
-            if (idx < author_list.length - 1) {
-                author.innerHTML += ', ';
-            }
-        }
-
-        // Extract venue from first material item (if it looks like a venue)
-        var venue_name = null;
-        var paper_url = null;
-        var links_start_idx = 0;
-
-        if (material_list.length > 0) {
-            var first_item = material_list[0][0];
-            // Check if first item is a venue (contains year or known venue names)
-            var venue_patterns = ['CVPR', 'ICCV', 'ECCV', 'NeurIPS', 'ICML', 'ICLR', 'SIGGRAPH', 'CoRL', '3DV', 'TPAMI', 'arXiv', 'arxiv', 'CVPRW', 'AAAI'];
-            var is_venue = venue_patterns.some(function(pattern) {
-                return first_item.indexOf(pattern) !== -1;
-            });
-
-            if (is_venue) {
-                venue_name = first_item;
-                paper_url = material_list[0][1];
-                links_start_idx = 1;
-            }
-        }
-
-        // Create venue line with award (Vincent style: Award • Venue)
-        var venue_line = document.createElement('div');
-        venue_line.setAttribute('class', 'venue-line');
-
-        if (award_name && award_name !== '') {
-            venue_line.innerHTML = '<span class="award">' + award_name + '</span>';
-            if (venue_name) {
-                venue_line.innerHTML += ' · ';
-            }
-        }
-
-        if (venue_name) {
-            // Parse venue to make venue name bold (e.g., "CVPR 2025" -> "<b>CVPR</b> 2025")
-            var venue_parts = venue_name.match(/^([A-Za-z\s]+)(.*)$/);
-            if (venue_parts) {
-                venue_line.innerHTML += '<span class="venue"><b>' + venue_parts[1].trim() + '</b> ' + venue_parts[2] + '</span>';
-            } else {
-                venue_line.innerHTML += '<span class="venue">' + venue_name + '</span>';
-            }
-        }
-
-        // Create material links (no "/" separator, Vincent style)
-        var material = document.createElement('div');
-        material.setAttribute('class', 'material');
-
-        // Add Paper link first if we have paper_url
-        if (paper_url && paper_url !== '') {
-            material.innerHTML += '<a href="' + paper_url + '" target="_blank">Paper</a>';
-        }
-
-        // Add remaining links (no "/" separator)
-        for (var idx = links_start_idx; idx < material_list.length; idx++) {
-            if (material.innerHTML !== '') {
-                material.innerHTML += ' ';  // Just space, no "/"
-            }
-            material.innerHTML += (
-                '<a href="' +
-                material_list[idx][1] +
-                '" target="_blank">' +
-                material_list[idx][0] +
-                '</a>');
-        }
+        var primary = _build_version(author_list, material_list, award_name);
 
         // Use createElement instead of insertCell for better compatibility
         var cell1 = document.createElement('td');
@@ -135,9 +150,62 @@ function render_project(project_name,
 
         var cell2 = document.createElement('td');
         cell2.appendChild(title);
-        cell2.appendChild(author);
-        cell2.appendChild(venue_line);
-        cell2.appendChild(material);
+
+        if (!has_conference) {
+            cell2.appendChild(primary.authorEl);
+            cell2.appendChild(primary.venueEl);
+            cell2.appendChild(primary.materialEl);
+        } else {
+            // Conference version excludes award (award only meaningful post-acceptance)
+            var conference = _build_version(conference_author_list, conference_material_list, null);
+
+            var primaryWrap = document.createElement('div');
+            primaryWrap.setAttribute('class', 'pub-version pub-version-primary');
+            primaryWrap.appendChild(primary.authorEl);
+            primaryWrap.appendChild(primary.venueEl);
+            primaryWrap.appendChild(primary.materialEl);
+
+            var confWrap = document.createElement('div');
+            confWrap.setAttribute('class', 'pub-version pub-version-conference');
+            confWrap.hidden = true;
+            confWrap.appendChild(conference.authorEl);
+            confWrap.appendChild(conference.venueEl);
+            confWrap.appendChild(conference.materialEl);
+
+            var toggle = document.createElement('div');
+            toggle.setAttribute('class', 'version-toggle');
+            var primaryTab = document.createElement('a');
+            primaryTab.setAttribute('class', 'version-tab is-active');
+            primaryTab.textContent = primary_label;
+            var confTab = document.createElement('a');
+            confTab.setAttribute('class', 'version-tab');
+            confTab.textContent = conference_label;
+
+            (function(pWrap, cWrap, pTab, cTab) {
+                pTab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    pWrap.hidden = false;
+                    cWrap.hidden = true;
+                    pTab.classList.add('is-active');
+                    cTab.classList.remove('is-active');
+                });
+                cTab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    pWrap.hidden = true;
+                    cWrap.hidden = false;
+                    cTab.classList.add('is-active');
+                    pTab.classList.remove('is-active');
+                });
+            })(primaryWrap, confWrap, primaryTab, confTab);
+
+            toggle.appendChild(primaryTab);
+            toggle.appendChild(confTab);
+
+            cell2.appendChild(toggle);
+            cell2.appendChild(primaryWrap);
+            cell2.appendChild(confWrap);
+        }
+
         row.appendChild(cell2);
     }
 };
@@ -227,12 +295,34 @@ render_project(
         "Yinghao Xu",
     ],
     material_list=[
-        ['arXiv 2026', 'https://arxiv.org/abs/2601.21998'],
+        ['RSS 2026', 'https://arxiv.org/abs/2601.21998'],
         ['Project Page', 'https://technology.robbyant.com/lingbot-va'],
         ['Code', 'https://github.com/Robbyant/lingbot-va'],
         ['Model', 'https://huggingface.co/collections/robbyant/lingbot-va']
     ],
     award_name='',
+    conference_author_list=[
+        "Lin Li", "equal",
+        "Qihang Zhang", "equal",
+        "Yiming Luo", "equal",
+        "Shuai Yang (RobbyAnt)",
+        "Ruilin Wang",
+        "Fei Han",
+        "Mingrui Yu",
+        "Zelin Gao",
+        "Nan Xue",
+        "Boyu Zhou",
+        "Xing Zhu",
+        "Mingyu Ding",
+        "Yujun Shen",
+        "Yinghao Xu",
+    ],
+    conference_material_list=[
+        ['RSS 2026', 'https://arxiv.org/abs/2601.21998'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-va'],
+        ['Code', 'https://github.com/Robbyant/lingbot-va'],
+        ['Model', 'https://huggingface.co/collections/robbyant/lingbot-va'],
+    ],
 );
 
 render_project(
@@ -1655,6 +1745,8 @@ render_author('Fei Han');
 render_author('Mingrui Yu', 'https://mingrui-yu.github.io/');
 render_author('Zelin Gao', 'https://zelingao98.github.io/');
 render_author('Xing Zhu', 'https://scholar.google.com/citations?user=Hnh87z4AAAAJ&hl=en');
+render_author('Boyu Zhou', 'https://boyuzhou.net/');
+render_author('Mingyu Ding', 'https://dingmyu.github.io/');
 render_author('Robbyant Team');
 render_author('Yanhong Zeng', 'https://zengyh1900.github.io/');
 render_author('Yixuan Li');
