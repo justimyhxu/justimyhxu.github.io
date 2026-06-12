@@ -277,6 +277,25 @@ render_project(
 // Projects.
 
 render_project(
+    project_name='GAVLN',
+    figure_path='./assets/projects/ga-vln.png',
+    title_name='GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation',
+    author_list=[
+        "Jiahao Yang",
+        "Zihan Wang",
+        "Xiangyang Li",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Yinghao Xu", "corresponding",
+        "Shuqiang Jiang", "corresponding",
+    ],
+    material_list=[
+        ['CVPR 2026', 'https://arxiv.org/abs/2605.22036'],
+    ],
+    award_name=null,
+);
+
+render_project(
     project_name='CausalWM',
     figure_path='./assets/projects/lingbot-va.mp4',
     title_name='Causal World Modeling for Robot Control',
@@ -1779,3 +1798,9 @@ render_author('Linzhuo Chen', 'https://linzhuo.xyz/');
 render_author('Jian Gao', 'https://ygaojiany.github.io/');
 render_author('Yipengjing Sun');
 render_author('Liangxiao Hu');
+
+// New authors for GA-VLN
+render_author('Jiahao Yang');
+render_author('Zihan Wang');
+render_author('Xiangyang Li');
+render_author('Shuqiang Jiang', 'https://vipl.ict.ac.cn/people/_sqjiang/');
