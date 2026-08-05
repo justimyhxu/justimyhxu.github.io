@@ -277,8 +277,194 @@ render_project(
 // Projects.
 
 render_project(
+    project_name='LingBotVideo',
+    figure_path='./assets/projects/lingbot-video.mp4',
+    title_name='LingBot-Video: Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence',
+    author_list=[
+        'Shuailei Ma',
+        'Jiaqi Liao',
+        'Xinyang Wang',
+        'Jingjing Wang',
+        'Chaoran Feng',
+        'Zijing Hu',
+        'Chong Bao',
+        'Zichen Xi',
+        'Yuqi Gan',
+        'Weisen Wang',
+        'Yanhong Zeng',
+        'Qin Zhao',
+        'Zifan Shi',
+        'Wei Wu',
+        'Hao Ouyang',
+        'Qiuyu Wang',
+        'Shangzhan Zhang',
+        'Jiahao Shao',
+        'Yipengjing Sun',
+        'Liangxiao Hu',
+        'Lunke Pan',
+        'Nan Xue',
+        'Kecheng Zheng',
+        'Yinghao Xu',
+        'Xing Zhu',
+        'Yujun Shen',
+        'Ka Leong Cheng',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2607.07675'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-video'],
+        ['Code', 'https://github.com/Robbyant/lingbot-video'],
+        ['Model', 'https://huggingface.co/collections/robbyant/lingbot-video'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='LingBotWorld2',
+    figure_path='./assets/projects/lingbot-world2.mp4',
+    title_name='LingBot-World 2.0: Infinite Worlds with Versatile Interactions',
+    author_list=[
+        'Zelin Gao',
+        'Qiuyu Wang',
+        'Jiapeng Zhu',
+        'Jingye Chen',
+        'Zichen Liu',
+        'Qingyan Bai',
+        'Jiahao Wang',
+        'Yufeng Yuan',
+        'Hanlin Wang',
+        'Yichong Lu',
+        'Ka Leong Cheng',
+        'Haojie Zhang',
+        'Jian Gao',
+        'Tianrui Feng',
+        'Yuzheng Liu',
+        'Yao Yao',
+        'Yinghao Xu',
+        'Xing Zhu',
+        'Yujun Shen',
+        'Hao Ouyang',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2607.07534'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-world-v2'],
+        ['Code', 'https://github.com/Robbyant/lingbot-world-v2'],
+        ['Model', 'https://huggingface.co/robbyant/lingbot-world-v2-14b-causal-fast'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='LingBotVA2',
+    figure_path='./assets/projects/lingbot-va2.mp4',
+    title_name='LingBot-VA 2.0: Native Video-Action Pretraining for Generalizable Robot Control',
+    author_list=[
+        'Qihang Zhang',
+        'Lin Li',
+        'Luyao Zhang',
+        'Shuai Yang (RobbyAnt)',
+        'Yiming Luo',
+        'Shuaiting Li',
+        'Ruilin Wang',
+        'Junke Wang',
+        'Jiahao Shao',
+        'Gangwei Xu',
+        'Jiaming Zhou',
+        'Yishu Shen',
+        'Yudong Jin',
+        'Fangyi Xu',
+        'Shuailei Ma',
+        'Jiaqi Liao',
+        'Guanxing Lu',
+        'Zifan Shi',
+        'Yongkun Wen',
+        'Yujie Zhao',
+        'Weixuan Tang',
+        'Xinyang Wang',
+        'Chaojian Li',
+        'Jiapeng Zhu',
+        'Ka Leong Cheng',
+        'Nan Xue',
+        'Xing Zhu',
+        'Yujun Shen',
+        'Yinghao Xu',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2607.08639'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-va-v2'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='LingBotVision',
+    figure_path='./assets/projects/lingbot-vision.webp',
+    title_name='LingBot-Vision: Vision Pretraining for Dense Spatial Perception',
+    author_list=[
+        'Zelin Fu',
+        'Bin Tan',
+        'Changjiang Sun',
+        'Shaohui Liu',
+        'Kecheng Zheng',
+        'Yinghao Xu',
+        'Xing Zhu',
+        'Yujun Shen',
+        'Nan Xue',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2607.05247'],
+        ['Project Page', 'https://technology.robbyant.com/lingbot-vision'],
+        ['Code', 'https://github.com/Robbyant/lingbot-vision'],
+        ['Model', 'https://huggingface.co/collections/robbyant/lingbot-vision'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='RepWAM',
+    figure_path='./assets/projects/repwam.png',
+    title_name='RepWAM: World Action Modeling with Representation Visual-Action Tokenizers',
+    author_list=[
+        "Junke Wang",
+        "Qihang Zhang",
+        "Shuai Yang (RepWAM)",
+        "Yiming Luo",
+        "Yujun Shen",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang",
+        "Yinghao Xu", "corresponding",
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2606.13674'],
+        ['Project Page', 'https://wdrink.github.io/RepWAM/'],
+        ['Code', 'https://github.com/wdrink/RepWAM'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='NextForcing',
+    figure_path='./assets/projects/nextforcing.mp4',
+    title_name='Next Forcing: Causal World Modeling with Multi-Chunk Prediction',
+    author_list=[
+        "Gangwei Xu",
+        "Qihang Zhang",
+        "Jiaming Zhou",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Xin Yang",
+        "Yinghao Xu", "corresponding",
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2606.11187'],
+        ['Project Page', 'https://gangweix.github.io/next-forcing/'],
+        ['Code', 'https://github.com/gangweix/next-forcing'],
+    ],
+    award_name=null,
+);
+
+render_project(
     project_name='GAVLN',
-    figure_path='./assets/projects/ga-vln.png',
+    figure_path='./assets/projects/gavln.jpg',
     title_name='GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation',
     author_list=[
         "Jiahao Yang",
@@ -1804,3 +1990,45 @@ render_author('Jiahao Yang');
 render_author('Zihan Wang');
 render_author('Xiangyang Li');
 render_author('Shuqiang Jiang', 'https://vipl.ict.ac.cn/people/_sqjiang/');
+
+// New authors for RepWAM / Next Forcing
+render_author('Gangwei Xu', 'https://gangweix.github.io/');
+render_author('Jiaming Zhou');
+render_author('Xin Yang');
+render_author('Junke Wang', 'https://wdrink.github.io/');
+render_author('Zuxuan Wu');
+render_author('Yu-Gang Jiang');
+// RepWAM's Shuai Yang is a different person from VWM's (ys-imtech); disambiguate via alias
+render_author('Shuai Yang (RepWAM)', 'https://yangs03.github.io/', 'Shuai Yang');
+
+// New authors for LingBot 2026 releases
+render_author('Shaohui Liu');
+render_author('Wei Wu');
+render_author('Xinyang Wang');
+render_author('Jiahao Wang');
+render_author('Yufeng Yuan');
+render_author('Yichong Lu');
+render_author('Haojie Zhang');
+render_author('Tianrui Feng');
+render_author('Yuzheng Liu');
+render_author('Jiaqi Liao', 'https://curryx-001.github.io/');
+render_author('Jingjing Wang');
+render_author('Chaoran Feng');
+render_author('Zijing Hu');
+render_author('Chong Bao');
+render_author('Zichen Xi');
+render_author('Yuqi Gan');
+render_author('Weisen Wang');
+render_author('Qin Zhao');
+render_author('Jiahao Shao', 'https://jiahao-shao1.github.io/');
+render_author('Lunke Pan');
+render_author('Luyao Zhang');
+render_author('Shuaiting Li');
+render_author('Yishu Shen', 'https://sys111111.github.io/');
+render_author('Yudong Jin', 'https://github.com/krahets');
+render_author('Fangyi Xu');
+render_author('Guanxing Lu');
+render_author('Yongkun Wen');
+render_author('Yujie Zhao');
+render_author('Weixuan Tang');
+render_author('Chaojian Li');
