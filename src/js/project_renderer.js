@@ -277,6 +277,129 @@ render_project(
 // Projects.
 
 render_project(
+    project_name='DSAQuant',
+    figure_path='./assets/projects/dsaquant.jpg',
+    title_name='DSAQuant: Denoising-Stage-Aligned Quantization-Aware Training for Video Generation',
+    author_list=[
+        'Shuaiting Li',
+        'Zelin Gao',
+        'Haibin Shen',
+        'Yujun Shen',
+        'Haotong Qin',
+        'Yinghao Xu',
+    ],
+    material_list=[
+        ['NeurIPS 2026', 'https://arxiv.org/abs/2609.04031'],
+        ['Project Page', 'https://robbyant-research.github.io/DSAQuant/'],
+        ['Code', 'https://github.com/robbyant-research/DSAQuant'],
+        ['Model', 'https://huggingface.co/Robbyant-Research/DSAQuant'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='ZeroWAM',
+    figure_path='./assets/projects/zero-wam.jpg',
+    title_name='Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization',
+    author_list=[
+        'Jiaming Zhou',
+        'Qihang Zhang',
+        'Gangwei Xu',
+        'Cunxin Fan',
+        'Yujie Zhao',
+        'Ruilin Wang',
+        'Yiming Luo',
+        'Shuai Yang',
+        'Xing Zhu',
+        'Yujun Shen',
+        'Junwei Liang',
+        'Yinghao Xu',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2608.26103'],
+        ['Project Page', 'https://robbyant-research.github.io/Zero-WAM/'],
+        ['Code', 'https://github.com/robbyant-research/Zero-WAM'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='4DAnyone',
+    figure_path='./assets/projects/4danyone.jpg',
+    title_name='4DAnyone: Create Anyone in 4D from a Casual Monocular Video',
+    author_list=[
+        'Yudong Jin',
+        'Tao Xie',
+        'Qihang Zhang',
+        'Zehong Shen',
+        'Zhen Xu',
+        'Yujun Shen',
+        'Hujun Bao',
+        'Xiaowei Zhou',
+        'Yinghao Xu',
+    ],
+    material_list=[
+        ['SIGGRAPH ASIA 2026', 'https://arxiv.org/abs/2608.20335'],
+        ['Project Page', 'https://4danyone.github.io/'],
+        ['Code', 'https://github.com/ant-research/4DAnyone'],
+        ['Model', 'https://huggingface.co/AntResearch/4DAnyone'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='ThinkWithTools',
+    figure_path='./assets/projects/thinking-with-tools.jpg',
+    title_name='Thinking With Tools, Not With Pixels: Tool Calls as Text Scaffolds for Visual Reasoning',
+    author_list=[
+        'Jiahao Shao',
+        'Yuanbo Yang',
+        'Yiyi Liao',
+        'Yujun Shen',
+        'Ceyuan Yang',
+        'Yinghao Xu',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2608.09682'],
+        ['Project Page', 'https://textcall.github.io/'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='Image2Sim',
+    figure_path='./assets/projects/image2sim.jpg',
+    title_name='Image2Sim: Scaling Embodied Navigation via Generative Neural Simulator',
+    author_list=[
+        'Zihan Wang',
+        'Seungjun Lee',
+        'Yinghao Xu',
+        'Gim Hee Lee',
+    ],
+    material_list=[
+        ['NeurIPS 2026', 'https://arxiv.org/abs/2607.05765'],
+        ['Code', 'https://github.com/MrZihan/Image2Sim'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='JODA',
+    figure_path='./assets/projects/joda.jpg',
+    title_name='JODA: Composable Joint Dynamics for Articulated Objects',
+    author_list=[
+        'Tianhong Gao',
+        'Cheng Yu',
+        'Yinghao Xu',
+        'Mengyu Chu',
+    ],
+    material_list=[
+        ['NeurIPS 2026', 'https://arxiv.org/abs/2605.09954'],
+    ],
+    award_name=null,
+);
+
+render_project(
     project_name='LingBotVideo',
     figure_path='./assets/projects/lingbot-video.mp4',
     title_name='LingBot-Video: Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence',
@@ -455,7 +578,7 @@ render_project(
         "Yinghao Xu", "corresponding",
     ],
     material_list=[
-        ['arXiv 2026', 'https://arxiv.org/abs/2606.11187'],
+        ['NeurIPS 2026', 'https://arxiv.org/abs/2606.11187'],
         ['Project Page', 'https://gangweix.github.io/next-forcing/'],
         ['Code', 'https://github.com/gangweix/next-forcing'],
     ],
@@ -586,7 +709,7 @@ render_project(
         "Nan Xue",
     ],
     material_list=[
-        ['arXiv 2026', 'https://arxiv.org/abs/2601.17895'],
+        ['ECCV 2026', 'https://arxiv.org/abs/2601.17895'],
         ['Project Page', 'https://technology.robbyant.com/lingbot-depth'],
         ['Code', 'https://github.com/Robbyant/lingbot-depth'],
         ['Model', 'https://huggingface.co/collections/robbyant/lingbot-depth']
@@ -664,11 +787,11 @@ render_project(
         "Yinghao Xu", "corresponding",
     ],
     material_list=[
-        ['arXiv 2026', 'https://arxiv.org/abs/2604.14141'],
+        ['ECCV 2026', 'https://arxiv.org/abs/2604.14141'],
         ['Project Page', 'https://technology.robbyant.com/lingbot-map'],
         ['Code', 'https://github.com/robbyant/lingbot-map'],
     ],
-    award_name='',
+    award_name='Award Candidate (Top 10 Papers)',
 );
 
 render_project(
@@ -2032,3 +2155,14 @@ render_author('Yongkun Wen');
 render_author('Yujie Zhao');
 render_author('Weixuan Tang');
 render_author('Chaojian Li');
+render_author('Haibin Shen');
+render_author('Haotong Qin');
+render_author('Cunxin Fan');
+render_author('Junwei Liang');
+render_author('Tao Xie');
+render_author('Yuanbo Yang');
+render_author('Seungjun Lee');
+render_author('Gim Hee Lee');
+render_author('Tianhong Gao');
+render_author('Cheng Yu');
+render_author('Mengyu Chu');

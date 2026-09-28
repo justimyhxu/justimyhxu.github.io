@@ -245,6 +245,11 @@ section:last-child {
   color: var(--color-text-primary);
 }
 
+.callout-warning {
+  color: var(--color-accent-primary);
+  font-weight: 600;
+}
+
 /* ============================================
    FOOTER
    ============================================ */

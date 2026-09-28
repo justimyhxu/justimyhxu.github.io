@@ -102,7 +102,7 @@
         </div>
       </div>
       <blockquote class="bio-callout">
-        I'm also looking for <strong>Ph.D. students</strong>, <strong>research assistants</strong> at <a href="https://cse.hkust.edu.hk/">HKUST</a> who are interested in <strong>3DV/Gen AI/Embodied AI</strong>. Please feel free to drop me an email with your CV.
+        <strong>To prospective students:</strong> We are always looking for <strong>self-motivated</strong> students at <a href="https://cse.hkust.edu.hk/">HKUST</a> who are passionate about <strong>physical AI, computer vision, and generative AI</strong>. If you are interested in joining our lab, please email <a href="mailto:xu.lab@outlook.com"><strong>xu.lab@outlook.com</strong></a>. <span class="callout-warning">I will not reply to application emails sent to my personal email.</span>
         <br><br>   
         I'm looking for <strong>full-time research scientists/engineers</strong> and <strong>research interns</strong> at <a href="https://www.robbyant.com/">Robbyant</a> to work on world models and embodied AI.
  </blockquote>
@@ -114,6 +114,14 @@
       <h2 class="section-heading">Recent News</h2>
 
       <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2026. 09:</span>
+          <span class="news-content">Seven papers are accepted by SIGGRAPH Asia 2026 and NeurIPS 2026 (1 SIGGRAPH Asia, 6 NeurIPS).</span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026. 09:</span>
+          <span class="news-content"><a href="https://technology.robbyant.com/lingbot-map">LingBot-Map</a> is selected as an award candidate at ECCV 2026 (top 10 papers).</span>
+        </li>
         <li class="news-item">
           <span class="news-date">2026. 04:</span>
           <span class="news-content">We release <a href="https://technology.robbyant.com/lingbot-map">LingBot-Map</a>, a streaming 3D foundation model for real-time scene reconstruction.</span>
@@ -232,11 +240,9 @@
         <ul>
           <li><a href="https://linzhuo.xyz/" target="_blank">Linzhuo Chen</a></li>
           <li><a href="https://github.com/krahets" target="_blank">Yudong Jin</a></li>
-          <li><a href="https://czzzzh.github.io/" target="_blank">Chuhao Chen</a></li>
         </ul>
         <ul>
           <li><a href="https://ygaojiany.github.io/" target="_blank">Jian Gao</a></li>
-          <li><a href="https://hyzcluster.github.io/" target="_blank">Yuze He</a></li>
           <li><a href="https://list0830.github.io/" target="_blank">Shuaiting Li</a></li>
         </ul>
       </div>
@@ -248,9 +254,9 @@
       <div class="publication-filters">
         <h2 class="section-heading no-border">
           <span class="heading-text">Publications</span>
-          <span class="inline-filters">(<a href="#" id="select1" onclick="showPubs(1); return false;" class="active">show
-              selected</a> / <a href="#" id="select0" onclick="showPubs(0); return false;">show
-              recent</a> / <a href="#" id="select3" onclick="showPubs(3); return false;">show all by date</a> / <a
+          <span class="inline-filters">(<a href="#" id="select0" onclick="showPubs(0); return false;" class="active">show
+              recent</a> / <a href="#" id="select1" onclick="showPubs(1); return false;">show
+              selected</a> / <a href="#" id="select3" onclick="showPubs(3); return false;">show all by date</a> / <a
               href="#" id="select4" onclick="showPubs(4); return false;">show all by topic</a>)</span>
         </h2>
 
@@ -318,20 +324,26 @@
       <!-- Publications - All sections inside #pubs for rendering -->
       <div id="pubs">
         <!-- Recent view -->
-        <div id="pubs_recent" style="display:none;">
+        <div id="pubs_recent">
           <table cellspacing="17">
             <tbody>
+              <tr name="ThinkWithTools"></tr>
+              <tr name="ZeroWAM"></tr>
+              <tr name="4DAnyone"></tr>
+              <tr name="NextForcing"></tr>
+              <tr name="RepWAM"></tr>
+              <tr name="DSAQuant"></tr>
+              <tr name="Image2Sim"></tr>
               <tr name="LingBotVideo"></tr>
               <tr name="LingBotWorld2"></tr>
               <tr name="LingBotVA2"></tr>
               <tr name="LingBotVision"></tr>
-              <tr name="RepWAM"></tr>
-              <tr name="NextForcing"></tr>
               <tr name="GCT"></tr>
               <tr name="CausalWM"></tr>
               <tr name="OpenWM"></tr>
               <tr name="MDM"></tr>
               <tr name="GAVLN"></tr>
+              <tr name="JODA"></tr>
               <tr name="SceneScribe1M"></tr>
               <tr name="Ditto"></tr>
               <tr name="ISA4D"></tr>
@@ -340,28 +352,12 @@
               <tr name="VWM"></tr>
               <tr name="CameraCtrl2"></tr>
               <tr name="Edicho"></tr>
-              <tr name="GroomLight"></tr>
-              <tr name="CameraCtrl"></tr>
-              <tr name="3DitScene"></tr>
-              <tr name="im2flow2act"></tr>
-              <tr name="TGH"></tr>
-              <tr name="CVD"></tr>
-              <tr name="FiVA"></tr>
-              <tr name="GRM"></tr>
-              <tr name="3DPE"></tr>
-              <tr name="BerfScene"></tr>
-              <tr name="SceneWiz"></tr>
-              <tr name="GSM"></tr>
-              <tr name="DMV3D"></tr>
-              <tr name="PFLRM"></tr>
-              <tr name="Instant3D"></tr>
-              <tr name="LSVGAN"></tr>
             </tbody>
           </table>
         </div>
 
         <!-- Default/Selected view -->
-        <div id="pubs_selected">
+        <div id="pubs_selected" style="display:none;">
           <table cellspacing="17">
             <tbody>
               <tr name="LingBotVA2"></tr>
@@ -431,9 +427,14 @@
           </div>
           <table cellspacing="17">
             <tbody>
+              <tr name="ThinkWithTools"></tr>
+              <tr name="DSAQuant"></tr>
+              <tr name="ZeroWAM"></tr>
+              <tr name="4DAnyone"></tr>
               <tr name="LingBotVideo"></tr>
               <tr name="LingBotWorld2"></tr>
               <tr name="LingBotVA2"></tr>
+              <tr name="Image2Sim"></tr>
               <tr name="LingBotVision"></tr>
               <tr name="RepWAM"></tr>
               <tr name="NextForcing"></tr>
@@ -442,6 +443,7 @@
               <tr name="OpenWM"></tr>
               <tr name="MDM"></tr>
               <tr name="GAVLN"></tr>
+              <tr name="JODA"></tr>
               <tr name="SceneScribe1M"></tr>
               <tr name="Ditto"></tr>
             </tbody>
@@ -564,6 +566,7 @@
           </div>
           <table cellspacing="17">
             <tbody>
+              <tr name="DSAQuant"></tr>
               <tr name="LingBotWorld2"></tr>
               <tr name="LingBotVideo"></tr>
               <tr name="CausalWM"></tr>
@@ -582,10 +585,13 @@
           </div>
           <table cellspacing="17">
             <tbody>
+              <tr name="ZeroWAM"></tr>
               <tr name="LingBotVA2"></tr>
+              <tr name="Image2Sim"></tr>
               <tr name="RepWAM"></tr>
               <tr name="NextForcing"></tr>
               <tr name="GAVLN"></tr>
+              <tr name="JODA"></tr>
               <tr name="CausalWM"></tr>
               <tr name="im2flow2act"></tr>
             </tbody>
@@ -633,6 +639,7 @@
           </div>
           <table cellspacing="17">
             <tbody>
+              <tr name="4DAnyone"></tr>
               <tr name="GroomLight"></tr>
               <tr name="TGH"></tr>
               <tr name="SSPNeRF"></tr>
@@ -671,6 +678,7 @@
           </div>
           <table cellspacing="17">
             <tbody>
+              <tr name="ThinkWithTools"></tr>
               <tr name="LingBotVision"></tr>
               <tr name="CMPL"></tr>
               <tr name="VTHCL"></tr>
@@ -1028,9 +1036,13 @@
 
     <!-- ==================== MENTORED STUDENTS ==================== -->
     <section id="students">
-      <h2 class="section-heading">Past Mentored Students</h2>
+      <h2 class="section-heading">Alumni</h2>
 
       <ul>
+        <li><a href="https://hyzcluster.github.io/" target="_blank">Yuze He</a> <span class="list-year">Ph.D at
+            Tsinghua University</span></li>
+        <li><a href="https://czzzzh.github.io/" target="_blank">Chuhao Chen</a> <span class="list-year">Ph.D at
+            CMU</span></li>
         <li><a href="https://mingrui-yu.github.io/" target="_blank">Mingrui Yu</a> <span class="list-year">Postdoc at UC
             Berkeley</span></li>
         <li><a href="https://wdrink.github.io/" target="_blank">Junke Wang</a> <span class="list-year">Research Scientist
@@ -1041,8 +1053,8 @@
             Scientist at Robbyant</span></li>
         <li><a href="https://dsaurus.github.io/saurus/" target="_blank">Ruizhi Shao</a> <span class="list-year">Senior
             Research Scientist at Rhoda AI</span></li>
-        <li><a href="https://wutong16.github.io/" target="_blank">Tong Wu</a> <span class="list-year">Postdoc at
-            Stanford</span></li>
+        <li><a href="https://wutong16.github.io/" target="_blank">Tong Wu</a> <span class="list-year">Assistant
+            Professor at Fudan University</span></li>
         <li><a href="https://alvinliu0.github.io/" target="_blank">Xian Liu</a> <span class="list-year">Research
             Scientist at XAI</span></li>
         <li><a href="https://jytime.github.io/" target="_blank">Jianyuan Wang</a> <span class="list-year">Ph.D at VGG
@@ -1053,8 +1065,8 @@
             class="list-year">Ph.D at HKUST</span></li>
         <li><a href="https://primecai.github.io/" target="_blank">Shengqu Cai</a> <span class="list-year">Ph.D at
             Stanford</span></li>
-        <li><a href="https://zhengfeikuang.com/" target="_blank">Zhengfei Kuang</a> <span class="list-year">Ph.D at
-            Stanford</span></li>
+        <li><a href="https://zhengfeikuang.com/" target="_blank">Zhengfei Kuang</a> <span class="list-year">Research
+            Scientist at NVIDIA</span></li>
         <li><a href="https://lakonik.github.io/" target="_blank">Hansheng Chen</a> <span class="list-year">Ph.D at
             Stanford</span></li>
         <li><a href="https://y-zheng18.github.io/" target="_blank">Yang Zheng</a> <span class="list-year">Ph.D at
@@ -1073,7 +1085,7 @@
   <script type="text/javascript" src="./src/js/project_renderer.js"></script>
 
   <!-- Initialize publications display -->
-  <script>showPubs(1);</script>
+  <script>showPubs(0);</script>
   <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 100 });</script>
 </body>
 
