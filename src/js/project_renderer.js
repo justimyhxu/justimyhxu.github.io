@@ -299,7 +299,7 @@ render_project(
 
 render_project(
     project_name='ZeroWAM',
-    figure_path='./assets/projects/zero-wam.jpg',
+    figure_path='./assets/projects/zero-wam.mp4',
     title_name='Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization',
     author_list=[
         'Jiaming Zhou',
@@ -325,7 +325,7 @@ render_project(
 
 render_project(
     project_name='4DAnyone',
-    figure_path='./assets/projects/4danyone.jpg',
+    figure_path='./assets/projects/4danyone.mp4',
     title_name='4DAnyone: Create Anyone in 4D from a Casual Monocular Video',
     author_list=[
         'Yudong Jin',
