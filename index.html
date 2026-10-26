@@ -16,11 +16,7 @@
   <link rel="stylesheet" href="src/styles/base.css">
   <link rel="stylesheet" href="src/styles/layout.css">
   <link rel="stylesheet" href="src/styles/components.css">
-  <link rel="stylesheet" href="src/styles/legacy.css">
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" type="image/png" href="assets/large-icon.png">
-</head>
+  <link rel="stylesheet" href="src/styles/legacy.css"></head>
 
 <body>
   <!-- ==================== TOP NAVIGATION ==================== -->
@@ -48,7 +44,7 @@
         <div class="hero-bio">
           <h2 class="greeting">Hi, I'm Yinghao!</h2>
           I am an assistant professor in the Department of Computer Science and Engineering at the <a href="https://cse.hkust.edu.hk/">HKUST</a>, leading the <a href="https://hkust-xulab.com/">HKUST XU Lab</a>.
-          Previously, I was a staff research scientist at <a href="https://www.robbyant.com/">RobbyAnt</a>, leading a research group working on world models and embodied AI.
+          Previously, I was a staff research scientist at <a href="https://www.robbyant.com/">Robbyant</a>, leading a research group working on world models and embodied AI.
           Before that, I was a postdoctoral researcher at Stanford University working with <a href="https://stanford.edu/~gordonwz/">Prof.
           Gordon Wetzstein</a>. 
           <br> <br>
@@ -327,8 +323,12 @@
         <div id="pubs_recent">
           <table cellspacing="17">
             <tbody>
+              <!-- <tr name="FluidGen"></tr> -->
+
+              <tr name="FOMI"></tr>
               <tr name="ThinkWithTools"></tr>
               <tr name="ZeroWAM"></tr>
+              <tr name="PPMem"></tr>
               <tr name="4DAnyone"></tr>
               <tr name="NextForcing"></tr>
               <tr name="RepWAM"></tr>
@@ -427,6 +427,9 @@
           </div>
           <table cellspacing="17">
             <tbody>
+              <tr name="FluidGen"></tr>
+              <tr name="PPMem"></tr>
+              <tr name="FOMI"></tr>
               <tr name="ThinkWithTools"></tr>
               <tr name="DSAQuant"></tr>
               <tr name="ZeroWAM"></tr>
@@ -566,6 +569,8 @@
           </div>
           <table cellspacing="17">
             <tbody>
+              <tr name="FluidGen"></tr>
+              <tr name="PPMem"></tr>
               <tr name="DSAQuant"></tr>
               <tr name="LingBotWorld2"></tr>
               <tr name="LingBotVideo"></tr>
@@ -585,6 +590,7 @@
           </div>
           <table cellspacing="17">
             <tbody>
+              <tr name="FOMI"></tr>
               <tr name="ZeroWAM"></tr>
               <tr name="LingBotVA2"></tr>
               <tr name="Image2Sim"></tr>
@@ -1083,10 +1089,11 @@
   <!-- Scripts - order matters! -->
   <script type="text/javascript" src="./src/js/function.js"></script>
   <script type="text/javascript" src="./src/js/project_renderer.js"></script>
+  <script type="text/javascript" src="./src/js/scroll.js"></script>
 
   <!-- Initialize publications display -->
   <script>showPubs(0);</script>
-  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 100 });</script>
+  <script>var smoothScroll = new SmoothScroll('a[href*="#"]', { speed: 100 });</script>
 </body>
 
 </html>

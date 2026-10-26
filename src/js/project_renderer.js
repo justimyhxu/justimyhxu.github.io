@@ -277,6 +277,73 @@ render_project(
 // Projects.
 
 render_project(
+    project_name='FluidGen',
+    figure_path='./assets/projects/fluidgen.mp4',
+    title_name='FluidGen: Physics-Aware Fluid Video Generation via Motion-Guided Post-Training',
+    author_list=[
+        'Yang Zheng',
+        'Zizhang Li',
+        'Boyang Deng',
+        'Jan Ackermann',
+        'Lei Shu',
+        'Yinghao Xu',
+        'Jiajun Wu',
+        'Gordon Wetzstein',
+        'Leonidas Guibas',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2610.25660'],
+        ['Project Page', 'https://y-zheng18.github.io/FluidGen/'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='PPMem',
+    figure_path='./assets/projects/ppmem.jpg',
+    title_name='Persistent Planar Memory for Video World Models',
+    author_list=[
+        'Yuze He',
+        'Bin Tan',
+        'Zelin Gao',
+        'Yujun Shen',
+        'Yong-Jin Liu',
+        'Nan Xue',
+        'Yinghao Xu',
+    ],
+    material_list=[
+        ['NeurIPS 2026', 'https://arxiv.org/abs/2610.23795'],
+        ['Project Page', 'https://hyzcluster.github.io/ppmem/'],
+        ['Code', 'https://github.com/robbyant-research/PPMem'],
+        ['Model', 'https://huggingface.co/Robbyant-Research/PPMem'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='FOMI',
+    figure_path='./assets/projects/fomi.mp4',
+    title_name='FOMI: A Force-Feedback Manipulation Interface for Teaching Contact-Rich Manipulation',
+    author_list=[
+        'Yishu Shen',
+        'Yiming Luo',
+        'Ruilin Wang',
+        'Bowen Yang',
+        'Shuai Yang (student)',
+        'Fangyi Xu',
+        'Yujun Shen',
+        'Fu Zhang',
+        'Boyu Zhou',
+        'Yinghao Xu',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2610.19839'],
+        ['Project Page', 'https://robbyant-research.github.io/FOMI/'],
+    ],
+    award_name=null,
+);
+
+render_project(
     project_name='DSAQuant',
     figure_path='./assets/projects/dsaquant.jpg',
     title_name='DSAQuant: Denoising-Stage-Aligned Quantization-Aware Training for Video Generation',
@@ -309,7 +376,7 @@ render_project(
         'Yujie Zhao',
         'Ruilin Wang',
         'Yiming Luo',
-        'Shuai Yang',
+        'Shuai Yang (student)',
         'Xing Zhu',
         'Yujun Shen',
         'Junwei Liang',
@@ -484,7 +551,7 @@ render_project(
         'Qihang Zhang',
         'Lin Li',
         'Luyao Zhang',
-        'Shuai Yang (RobbyAnt)',
+        'Shuai Yang (student)',
         'Yiming Luo',
         'Shuaiting Li',
         'Ruilin Wang',
@@ -549,7 +616,7 @@ render_project(
     author_list=[
         "Junke Wang",
         "Qihang Zhang",
-        "Shuai Yang (RepWAM)",
+        "Shuai Yang (student)",
         "Yiming Luo",
         "Yujun Shen",
         "Zuxuan Wu",
@@ -612,7 +679,7 @@ render_project(
         "Lin Li", "equal",
         "Qihang Zhang", "equal",
         "Yiming Luo", "equal",
-        "Shuai Yang (RobbyAnt)",
+        "Shuai Yang (student)",
         "Ruilin Wang",
         "Fei Han",
         "Mingrui Yu",
@@ -633,7 +700,7 @@ render_project(
         "Lin Li", "equal",
         "Qihang Zhang", "equal",
         "Yiming Luo", "equal",
-        "Shuai Yang (RobbyAnt)",
+        "Shuai Yang (student)",
         "Ruilin Wang",
         "Fei Han",
         "Mingrui Yu",
@@ -1760,12 +1827,12 @@ render_project(
         'Zhaopeng Cui',
     ],
     material_list=[
-        ['NeurIPS 2021', 'https://arxiv.org/pdf/2106.04566.pdf'],
-        ['Project', 'https://genforce.github.io/insgen/'],
-        ['Code', 'https://github.com/genforce/insgen'],
+        ['ICCV 2021', 'https://arxiv.org/pdf/2109.01847.pdf'],
+        ['Project', 'https://zju3dv.github.io/object_nerf/'],
+        ['Code', 'https://github.com/zju3dv/object_nerf'],
     ],
     award_name=null,
-)
+);
 
 render_project(
     project_name='GH-Feat',
@@ -2053,7 +2120,8 @@ render_author('Alan Yuille', 'http://www.cs.jhu.edu/~ayuille/');
 render_author('Maneesh Agrawala', 'https://graphics.stanford.edu/~maneesh/');
 render_author('Lu Jiang', 'http://www.lujiang.info/');
 render_author('Shuai Yang', 'https://ys-imtech.github.io/');
-render_author('Shuai Yang (RobbyAnt)', 'https://scholar.google.com/citations?user=l5HWdWEAAAAJ&hl=zh-CN', 'Shuai Yang');
+// My student Shuai Yang (yangs03); plain 'Shuai Yang' above is a different person (ys-imtech)
+render_author('Shuai Yang (student)', 'https://yangs03.github.io/', 'Shuai Yang');
 render_author('Changan Chen', 'https://changan.io/');
 render_author('Yebin Liu', 'https://www.liuyebin.com/');
 render_author('Delio Vicini', 'https://dvicini.github.io/');
@@ -2121,8 +2189,6 @@ render_author('Xin Yang');
 render_author('Junke Wang', 'https://wdrink.github.io/');
 render_author('Zuxuan Wu');
 render_author('Yu-Gang Jiang');
-// RepWAM's Shuai Yang is a different person from VWM's (ys-imtech); disambiguate via alias
-render_author('Shuai Yang (RepWAM)', 'https://yangs03.github.io/', 'Shuai Yang');
 
 // New authors for LingBot 2026 releases
 render_author('Shaohui Liu');
@@ -2166,3 +2232,15 @@ render_author('Gim Hee Lee');
 render_author('Tianhong Gao');
 render_author('Cheng Yu');
 render_author('Mengyu Chu');
+render_author('Zizhang Li');
+render_author('Boyang Deng');
+render_author('Jan Ackermann');
+render_author('Lei Shu');
+render_author('Jiajun Wu', 'https://jiajunwu.com/');
+render_author('Yuze He', 'https://hyzcluster.github.io/');
+render_author('Yong-Jin Liu');
+render_author('Bowen Yang');
+render_author('Fu Zhang');
+render_author('Peiye Zhuang');
+render_author('Xihui Liu');
+render_author('Xinyi Lin');
