@@ -344,6 +344,24 @@ render_project(
 );
 
 render_project(
+    project_name='PosePlaner',
+    figure_path='./assets/projects/poseplaner.jpg',
+    title_name='PosePlaner: Denoising Any Feed-Forward Pose Predictor from Pairwise Planar Geometry',
+    author_list=[
+        'Yihang Chen',
+        'Bin Tan', 'corresponding',
+        'Yujun Shen',
+        'Yinghao Xu', 'corresponding',
+        'Nan Xue',
+    ],
+    material_list=[
+        ['NeurIPS 2026', 'https://arxiv.org/abs/2610.34845'],
+        ['Project Page', 'https://robbyant-research.github.io/PosePlaner/'],
+    ],
+    award_name=null,
+);
+
+render_project(
     project_name='DSAQuant',
     figure_path='./assets/projects/dsaquant.jpg',
     title_name='DSAQuant: Denoising-Stage-Aligned Quantization-Aware Training for Video Generation',
