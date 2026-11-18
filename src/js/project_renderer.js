@@ -255,6 +255,8 @@ function render_author(author_name, link=null, alias=null) {
 
 
 
+// Adding a publication: follow the checklist in AGENTS.md ("Adding a Publication").
+
 // Template.
 
 render_project(
@@ -275,6 +277,72 @@ render_project(
 
 
 // Projects.
+
+render_project(
+    project_name='HALO',
+    figure_path='./assets/projects/halo.mp4',
+    title_name='HALO: Human-Aligned Data Collection for WhoLe-body MObile Manipulation',
+    author_list=[
+        'Shuai Yang (student)', 'equal',
+        'Fangyi Xu', 'equal',
+        'Yishu Shen',
+        'Kecheng Zheng',
+        'Yinghao Xu', 'corresponding',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2611.16439'],
+        ['Project Page', 'https://robbyant-research.github.io/Lingbot-ALOHA/'],
+        ['Code', 'https://github.com/robbyant-research/Lingbot-ALOHA'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='Map2SLAM',
+    figure_path='./assets/projects/map2slam.jpg',
+    title_name='Map2SLAM: From Streaming Map Prediction to Real-Time SLAM',
+    author_list=[
+        'Jian Gao',
+        'Linzhuo Chen',
+        'Yihang Chen',
+        'Jiagang Chen',
+        'Jiacheng Dong',
+        'Xun Cao',
+        'Nan Xue',
+        'Yinghao Xu', 'corresponding',
+        'Yao Yao', 'corresponding',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2611.11169'],
+        ['Project Page', 'https://robbyant-research.github.io/Map2SLAM/'],
+        ['Code', 'https://github.com/robbyant-research/Map2SLAM'],
+    ],
+    award_name=null,
+);
+
+render_project(
+    project_name='MixForcing',
+    figure_path='./assets/projects/mix-forcing.mp4',
+    title_name='Mix Forcing: Causal Pre-Training via Mixture Attention for Interactive World Models',
+    author_list=[
+        'Zelin Gao',
+        'Hao Ouyang',
+        'Jiapeng Zhu',
+        'Qiuyu Wang',
+        'Jingye Chen',
+        'Zichen Liu',
+        'Xing Zhu',
+        'Yujun Shen',
+        'Yinghao Xu', 'corresponding',
+    ],
+    material_list=[
+        ['arXiv 2026', 'https://arxiv.org/abs/2610.33589'],
+        ['Project Page', 'https://zelingao98.github.io/mixforcing/'],
+        ['Code', 'https://github.com/robbyant/lingbot-world-v2'],
+        ['Model', 'https://huggingface.co/collections/robbyant/lingbot-world-v2'],
+    ],
+    award_name=null,
+);
 
 render_project(
     project_name='FluidGen',
@@ -652,7 +720,7 @@ render_project(
 render_project(
     project_name='NextForcing',
     figure_path='./assets/projects/nextforcing.mp4',
-    title_name='Next Forcing: Causal World Modeling with Multi-Chunk Prediction',
+    title_name='Next Forcing: World Action Modeling with Multi-Chunk Prediction',
     author_list=[
         "Gangwei Xu",
         "Qihang Zhang",
@@ -2024,12 +2092,12 @@ render_project(
 
 // Authors.
 
-render_author('Alexander W. Bergman', 'https://alexanderbergman7.github.io/');
+render_author('Alexander W. Bergman', 'https://github.com/alexanderbergman7');
 render_author('Aliaksandr Siarohin', 'https://aliaksandrsiarohin.github.io/aliaksandr-siarohin-website/');
 render_author('Andreas Geiger', 'https://www.cvlibs.net/');
 render_author('Bangbang Yang', 'https://ybbbbt.com/');
 render_author('Bo Dai', 'http://daibo.info/');
-render_author('Bolei Zhou', 'https://boleizhou.github.io/');
+render_author('Bolei Zhou', 'https://bolei.cs.ucla.edu/');
 render_author('Ceyuan Yang', 'https://ceyuan.me/');
 render_author('Chaoyang Wang', 'https://mightychaos.github.io/');
 render_author('Chen Zhang');
@@ -2046,18 +2114,18 @@ render_author('Guandao Yang', 'https://www.guandaoyang.com/');
 render_author('Guofeng Zhang', 'http://www.cad.zju.edu.cn/home/gfzhang/');
 render_author('Han Hu', 'https://ancientmooner.github.io/');
 render_author('Han Xue', 'https://xuenan.net/');
-render_author('Han Zhou');
+render_author('Han Zhou', 'https://github.com/asdiuzd/');
 render_author('Hang Zhou', 'https://hangz-nju-cuhk.github.io/');
-render_author('Hansheng Chen', 'https://lakonik.github.io/');
+render_author('Hansheng Chen', 'https://hanshengchen.com/');
 render_author('Hao Ouyang', 'https://ken-ouyang.github.io/');
 render_author('Hao He', 'https://hehao13.github.io/');
 render_author('Hao Su', 'https://cseweb.ucsd.edu/~haosu/');
-render_author('Hao Tan', 'https://www.cs.unc.edu/~airsplay/');
+render_author('Hao Tan', 'https://github.com/airsplay');
 render_author('Hsin-Ying Lee', 'http://hsinyinglee.com/');
 render_author('Hongsheng Li', 'https://www.ee.cuhk.edu.hk/~hsli/');
 render_author('Hongdong Li', 'https://scholar.google.com/citations?user=Mq89JAcAAAAJ');
 render_author('Hujun Bao', 'http://www.cad.zju.edu.cn/home/bao/');
-render_author('Ivan Skorokhodov', 'https://universome.github.io/');
+render_author('Ivan Skorokhodov', 'https://skor.sh/');
 render_author('Jiahao Li', 'https://jiahao.ai/');
 render_author('Jiaming Sun', 'https://jiamingsun.me/');
 render_author('Jian Ren', 'https://alanspike.github.io/');
@@ -2077,7 +2145,7 @@ render_author('Manuela Veloso', 'https://www.jpmorgan.com/technology/artificial-
 render_author('Nan Xue', 'https://xuenan.net/');
 render_author('Peter Wonka', 'https://peterwonka.net/');
 render_author('Peng Wang', 'https://totoro97.github.io/');
-render_author('Qianqian Wang', 'https://www.cs.cornell.edu/~qqw/');
+render_author('Qianqian Wang', 'https://qianqianwang68.github.io/');
 render_author('Qianyi Wu', 'https://scholar.google.com/citations?user=XI0RtesAAAAJ');
 render_author('Qifeng Chen', 'https://cqf.io/');
 render_author('Qihang Zhang', 'https://zqh0253.github.io');
@@ -2085,7 +2153,7 @@ render_author('Qing Shuai', 'https://chingswy.github.io/');
 render_author('Qingyan Bai', 'https://scholar.google.com/citations?user=xUMjxi4AAAAJ');
 render_author('Qiuyu Wang', 'https://github.com/qiuyu96');
 render_author('Rameen Abdal', 'https://rameenabdal.github.io/');
-render_author('Ruizhi Shao', 'https://ruizhis.github.io/');
+render_author('Ruizhi Shao', 'https://dsaurus.github.io/saurus/');
 render_author('Raquel Urtasun', 'http://www.cs.toronto.edu/~urtasun/');
 render_author('Ryan Po', 'https://ryanpo.com/');
 render_author('Sai Bi', 'https://sai-bi.github.io/');
@@ -2097,7 +2165,7 @@ render_author('Shuran Song', 'https://shurans.github.io/');
 render_author('Sida Peng', 'https://pengsida.net/');
 render_author('Stephen Lin', 'https://scholar.google.com/citations?user=c3PYmxUAAAAJ');
 render_author('Tong Wu', 'https://wutong16.github.io/');
-render_author('Weihao Xia', 'https://scholar.google.com/citations?user=Egqp5AMAAAAJ');
+render_author('Weihao Xia', 'https://github.com/weihaox');
 render_author('Wang Yifan', 'https://yifita.netlify.app/');
 render_author('Wayne Wu', 'https://wywu.github.io/');
 render_author('Wenping Wang', 'https://www.cs.hku.hk/people/academic-staff/wenping');
@@ -2118,7 +2186,7 @@ render_author('Yudian Li');
 render_author('Yujiu Yang', 'https://scholar.google.com/citations?user=4gH3sxsAAAAJ');
 render_author('Yujun Shen', 'https://shenyujun.github.io/');
 render_author('Yuwei Guo', 'https://guoyww.github.io/');
-render_author('Yang Zheng', 'https://profiles.stanford.edu/yang-zheng');
+render_author('Yang Zheng', 'https://y-zheng18.github.io/');
 render_author('Ze Yang', 'https://www.cs.toronto.edu/~zeyang/');
 render_author('Zexiang Xu', 'https://zexiangxu.github.io/');
 render_author('Zhaopeng Cui', 'https://zhpcui.github.io/');
@@ -2149,7 +2217,7 @@ render_author('Shanchuan Lin', 'https://scholar.google.com/citations?user=EDWUw7
 render_author('Meng Wei', 'https://scholar.google.com/citations?user=Wx8ChLcAAAAJ&hl=en');
 render_author('Liangke Gui', 'https://scholar.google.com/citations?hl=en&user=oM6Pj3MAAAAJ');
 render_author('Qi Zhao', 'https://scholar.google.com/citations?user=9keFNTMAAAAJ&hl=en');
-render_author('Ka Leong Cheng', 'https://kaleongcheng.github.io/');
+render_author('Ka Leong Cheng', 'https://felixcheng97.github.io/');
 
 // New authors for CausalWM, OpenWM, MDM
 render_author('Lin Li');
@@ -2182,13 +2250,13 @@ render_author('Hanat Adai');
 render_author('Zelin Fu');
 render_author('Tianxiang Zhou');
 render_author('Han Zhang');
-render_author('Yunnan Wang', 'https://wangyunnan.github.io/');
+render_author('Yunnan Wang', 'https://github.com/wangyunnan');
 render_author('Minghao Chen', 'https://silent-chen.github.io/');
 render_author('David Novotny', 'https://d-novotny.github.io/');
 render_author('Wenjun Zeng', 'https://scholar.google.com/citations?user=_cUfvYQAAAAJ');
 render_author('Xin Jin', 'https://srameo.github.io/');
 render_author('Wen Wang', 'https://encounter1997.github.io/');
-render_author('Zichen Liu', 'https://zichenliu.github.io/');
+render_author('Zichen Liu', 'https://zliucz.github.io/');
 render_author('Linzhuo Chen', 'https://linzhuo.xyz/');
 render_author('Jian Gao', 'https://ygaojiany.github.io/');
 render_author('Yipengjing Sun');
@@ -2202,8 +2270,8 @@ render_author('Shuqiang Jiang', 'https://vipl.ict.ac.cn/people/_sqjiang/');
 
 // New authors for RepWAM / Next Forcing
 render_author('Gangwei Xu', 'https://gangweix.github.io/');
-render_author('Jiaming Zhou');
-render_author('Xin Yang');
+render_author('Jiaming Zhou', 'https://jiaming-zhou.github.io/');
+render_author('Xin Yang', 'https://sites.google.com/view/xinyang/home');
 render_author('Junke Wang', 'https://wdrink.github.io/');
 render_author('Zuxuan Wu');
 render_author('Yu-Gang Jiang');
@@ -2230,7 +2298,7 @@ render_author('Qin Zhao');
 render_author('Jiahao Shao', 'https://jiahao-shao1.github.io/');
 render_author('Lunke Pan');
 render_author('Luyao Zhang');
-render_author('Shuaiting Li');
+render_author('Shuaiting Li', 'https://list0830.github.io/');
 render_author('Yishu Shen', 'https://sys111111.github.io/');
 render_author('Yudong Jin', 'https://github.com/krahets');
 render_author('Fangyi Xu');
@@ -2241,24 +2309,27 @@ render_author('Weixuan Tang');
 render_author('Chaojian Li');
 render_author('Haibin Shen');
 render_author('Haotong Qin');
-render_author('Cunxin Fan');
-render_author('Junwei Liang');
-render_author('Tao Xie');
+render_author('Cunxin Fan', 'https://github.com/alfayoung');
+render_author('Junwei Liang', 'https://junweiliang.me');
+render_author('Tao Xie', 'https://xbillowy.github.io/');
 render_author('Yuanbo Yang');
 render_author('Seungjun Lee');
 render_author('Gim Hee Lee');
 render_author('Tianhong Gao');
 render_author('Cheng Yu');
 render_author('Mengyu Chu');
-render_author('Zizhang Li');
-render_author('Boyang Deng');
-render_author('Jan Ackermann');
-render_author('Lei Shu');
+render_author('Zizhang Li', 'https://kyleleey.github.io/');
+render_author('Boyang Deng', 'https://boyangdeng.com/');
+render_author('Jan Ackermann', 'https://janackermann.info/');
+render_author('Lei Shu', 'https://www.linkedin.com/in/lei-shu/');
 render_author('Jiajun Wu', 'https://jiajunwu.com/');
 render_author('Yuze He', 'https://hyzcluster.github.io/');
-render_author('Yong-Jin Liu');
+render_author('Yong-Jin Liu', 'https://cg.cs.tsinghua.edu.cn/people/~Yongjin/Yongjin.htm');
 render_author('Bowen Yang');
 render_author('Fu Zhang');
-render_author('Peiye Zhuang');
-render_author('Xihui Liu');
+render_author('Peiye Zhuang', 'https://payeah.net/');
+render_author('Xihui Liu', 'https://xh-liu.github.io/');
 render_author('Xinyi Lin');
+render_author('Jiagang Chen', 'https://scholar.google.com/citations?user=ll9g3BkAAAAJ');
+render_author('Jiacheng Dong', 'https://dongjiacheng06.github.io/');
+render_author('Xun Cao', 'https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html');
